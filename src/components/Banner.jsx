@@ -27,14 +27,14 @@ const Banner = () => {
           transition={{ duration: 1.2, ease: 'easeOut' }}
           className=" max-w-xl space-y-3 z-10 font-poppins"
         >
-          <h1 className="text-4xl md:text-6xl font-bold">Hi 👋</h1>
-          <h2 className="text-2xl md:text-4xl font-semibold">My name is</h2>
+          <h1 className="text-4xl 2xs:text-lg xs:text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">Hi 👋</h1>
+          <h2 className="text-2xl 2xs:text-lg xs:text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold">My name is</h2>
 
-          <h3 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-500">
+          <h3 className="text-3xl 2xs:text-lg xs:text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-500">
             M Zaryab Khan
           </h3>
 
-          <p className="text-xl md:text-2xl font-medium">
+          <p className="text-xl 2xs:text-xs xs:text-sm sm:text-sm md:text-xl lg:text-xl xl:text-xl font-medium">
             <TypeAnimation
               sequence={[
                 'I build things for the web',
@@ -56,17 +56,17 @@ const Banner = () => {
           className=" absolute
           top-10 right-0 bottom-0
           3xs:top-0 3xs:right-0 3xs:bottom-0
-          2xs:top-0 2xs:right-0 2xs:bottom-0
-          xs:top-96 xs:right-20 xs:bottom-14
-          sm:top-96 sm:right-20 sm:bottom-64
-          md:top-10 md:right-0 md:bottom-0
-           lg:top-96 lg:right-32 lg:bottom-12
-          xl:top-60 xl:right-0 xl:bottom-0
-          2xl:top-96 2xl:right-40 2xl:bottom-12
-          3xl:top-[70vw] 3xl:right-64 3xl:bottom-[26vw]
-           4xl:top-[40%] 4xl:right-72 4xl:bottom-[30%]
-          5xl:top-[40%] 5xl:right-72 5xl:bottom-[30%]
-          6xl:top-0 6xl:right-0 6xl:bottom-0
+          2xs:top-36 2xs:right-4 2xs:bottom-20
+          xs:top-32 xs:right-6 xs:bottom-24
+          sm:top-32 sm:right-10 sm:bottom-24
+          md:top-24 md:right-2 md:bottom-24
+           lg:top-32 lg:right-10 lg:bottom-24
+          xl:top-32 xl:right-5 xl:bottom-20
+          2xl:top-32 2xl:right-16 2xl:bottom-16
+          3xl:top-56 3xl:right-20 3xl:bottom-12
+           4xl:top-56 4xl:right-24 4xl:bottom-8
+          5xl:top-56 5xl:right-40 5xl:bottom-4
+          6xl:top-48 6xl:right-32 6xl:bottom-32
           7xl:top-48 7xl:right-32 7xl:bottom-32
           8xl:top-0 8xl:right-0 8xl:bottom-0
 
@@ -81,12 +81,19 @@ const Banner = () => {
             src={Profile_Image}
             alt="M Zaryab Khan"
             className="w-44 h-44
-            xs:w-56 xs:h-56 
-            sm:w-64 sm:h-64 
-            md:w-64 md:h-64 
-            lg:w-72 lg:h-72 
-               4xl:w-[100%] 4xl:h-[100%]
-            5xl:w-[100%] 5xl:h-[100%]
+              2xs:w-24 2xs:h-24 
+            xs:w-28 xs:h-28 
+            sm:w-28 sm:h-28 
+            md:w-36 md:h-36 
+            lg:w-32 lg:h-32 
+            xl:w-40 xl:h-40
+            2xl:w-44 2xl:h-44
+            3xl:w-52 3xl:h-52
+            4xl:w-56 4xl:h-56
+            5xl:w-60 5xl:h-60            
+            6xl:w-[100%] 6xl:h-[100%]
+            7xl:w-[100%] 7xl:h-[100%]
+            8xl:w-[100%] 8xl:h-[100%]
             rounded-full shadow-lg"
           />
         </div>
