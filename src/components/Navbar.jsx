@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import logo from '../images/logo.png';
 import { FaBars, FaTimes, FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
@@ -19,20 +18,20 @@ const Navbar = () => {
 
   useEffect(() => {
     const path = location.pathname;
-  
+
     if (path === '/') {
       const handleScroll = () => {
         const scrollPos = window.scrollY;
-  
+
         if (scrollPos < 100) {
           setActiveSection('home');
           return;
         }
-  
+
         const sectionIds = navLinks
           .map((link) => link.id)
           .filter((id) => document.getElementById(id));
-  
+
         for (let i = sectionIds.length - 1; i >= 0; i--) {
           const section = document.getElementById(sectionIds[i]);
           if (section && section.offsetTop <= scrollPos + 50) {
@@ -41,35 +40,34 @@ const Navbar = () => {
           }
         }
       };
-  
+
       window.addEventListener('scroll', handleScroll);
-      handleScroll(); // run on load
-  
+      handleScroll();
+
       return () => window.removeEventListener('scroll', handleScroll);
     } else {
       const routeToSection = {
         '/about': 'about',
-        // Add more routes if needed
       };
       setActiveSection(routeToSection[path] || '');
     }
   }, [location]);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center py-6 px-8 md:px-16 text-white bg-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-6 xl:px-16 bg-black bg-opacity-80 backdrop-blur text-white">
       {/* Logo */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="MZK Logo" className="w-48" />
+        <img src={logo} alt="MZK Logo" className="w-36 sm:w-44" />
       </div>
 
-      {/* Desktop Links + Social Icons */}
-      <div className="hidden md:flex items-center space-x-6 font-DMSans font-medium text-20px md:text-16px">
+      {/* Desktop Menu (xl and above only) */}
+      <div className="hidden xl:flex items-center space-x-6 font-DMSans font-medium text-base">
         {navLinks.map((link) => (
           <Link
             key={link.href}
             to={link.href}
-            className={`glow-hover-text ${
-              activeSection === link.id ? 'active-glow' : ''
+            className={`hover:text-royalBlue transition ${
+              activeSection === link.id ? 'text-royalBlue font-semibold' : ''
             }`}
           >
             {link.name}
@@ -77,12 +75,12 @@ const Navbar = () => {
         ))}
 
         {/* Social Icons */}
-        <div className="flex space-x-4 ml-4">
+        <div className="flex space-x-4 ml-6">
           <a
             href="https://github.com/your-username"
             target="_blank"
             rel="noopener noreferrer"
-            className="glow-hover p-1 rounded"
+            className="hover:text-royalBlue"
           >
             <FaGithub size={20} />
           </a>
@@ -90,7 +88,7 @@ const Navbar = () => {
             href="https://twitter.com/your-username"
             target="_blank"
             rel="noopener noreferrer"
-            className="glow-hover p-1 rounded"
+            className="hover:text-royalBlue"
           >
             <FaTwitter size={20} />
           </a>
@@ -98,35 +96,45 @@ const Navbar = () => {
             href="https://linkedin.com/in/your-username"
             target="_blank"
             rel="noopener noreferrer"
-            className="glow-hover p-1 rounded"
+            className="hover:text-royalBlue"
           >
             <FaLinkedin size={20} />
           </a>
         </div>
       </div>
 
-      {/* Hamburger Button (Mobile) */}
-      <div className="md:hidden z-50">
-        <button onClick={() => setIsOpen(!isOpen)}>
+      {/* Hamburger Menu Button (below xl) */}
+      <div className="xl:hidden">
+        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="absolute top-20 right-8 bg-black bg-opacity-90 text-white p-6 rounded-lg space-y-4 text-sm font-light md:hidden">
+        <div className="absolute top-full right-4 mt-2 w-52 bg-black bg-opacity-95 rounded-lg p-4 space-y-4 text-sm font-light xl:hidden shadow-lg backdrop-blur">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                to={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-white hover:text-royalBlue"
-              >
-                {link.name}
-              </Link>
-            </li>
+            <Link
+              key={link.href}
+              to={link.href}
+              onClick={() => setIsOpen(false)}
+              className="block text-white hover:text-royalBlue"
+            >
+              {link.name}
+            </Link>
           ))}
-        </ul>
+          <div className="flex space-x-4 pt-2">
+            <a href="https://github.com/your-username" target="_blank" rel="noreferrer">
+              <FaGithub />
+            </a>
+            <a href="https://twitter.com/your-username" target="_blank" rel="noreferrer">
+              <FaTwitter />
+            </a>
+            <a href="https://linkedin.com/in/your-username" target="_blank" rel="noreferrer">
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
       )}
     </nav>
   );
