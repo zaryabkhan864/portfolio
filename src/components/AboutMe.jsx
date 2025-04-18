@@ -56,11 +56,15 @@ const AboutMe = () => {
 
   return (
     <section
-      id="about-me"
-      className="relative bg-cover bg-center bg-no-repeat bg-fixed text-white py-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundImage: `url(${WE_BG})` }}
-      aria-labelledby="about-me-heading"
-    >
+    id="about-me"
+    className="relative bg-center bg-no-repeat bg-fixed bg-cover text-white py-20 px-4 sm:px-6 lg:px-8"
+    style={{
+      backgroundImage: `url(${WE_BG})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+      backgroundAttachment: 'scroll', // Test this instead of 'fixed' on mobile
+    }}
+  >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
 
