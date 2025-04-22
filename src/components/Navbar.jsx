@@ -6,6 +6,8 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   const navLinks = [
@@ -16,6 +18,22 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
+  // Scroll direction logic
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowNavbar(false); // scrolling down
+      } else {
+        setShowNavbar(true); // scrolling up
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  // Active section logic
   useEffect(() => {
     const path = location.pathname;
 
@@ -54,14 +72,23 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-6 xl:px-16 bg-black bg-opacity-80 backdrop-blur text-white">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-6 xl:px-16 
+      bg-transparent text-white transition-transform duration-300 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       {/* Logo */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="MZK Logo" className="w-36 sm:w-44" />
+      <img
+  src={logo}
+  alt="MZK Logo"
+  className="w-24 sm:w-32 md:w-36 lg:w-44 xl:w-52 h-auto object-contain"
+/>
       </div>
 
       {/* Desktop Menu (xl and above only) */}
-      <div className="hidden xl:flex items-center space-x-6 font-DMSans font-medium text-base">
+      <div className="hidden xl:flex items-center space-x-4 md:space-x-5 lg:space-x-6 font-DMSans font-medium text-base">
         {navLinks.map((link) => (
           <Link
             key={link.href}

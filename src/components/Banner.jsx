@@ -15,25 +15,25 @@ const Banner = () => {
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
+      {/* <div className="absolute inset-0 bg-black bg-opacity-30 z-0"></div> */}
 
       {/* Main Content Container */}
-      <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between z-10 py-16">
+      <div className="w-full max-w-6xl flex flex-row md:flex-row items-center justify-between z-10 py-16">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="w-full md:w-1/2 lg:w-2/3 space-y-3 md:space-y-4 text-center md:text-left"
+          className=" w-1/2 md:w-1/2 lg:w-2/3 space-y-3 md:space-y-4  md:text-left"
         >
-          <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold">Hi 👋</h1>
-          <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">My name is</h2>
+          <h1 className="text-md sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold">Hi 👋</h1>
+          <h2 className="text-md sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">My name is</h2>
 
-          <h3 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-500">
+          <h3 className="text-md sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-500">
             M Zaryab Khan
           </h3>
 
-          <p className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-medium">
+          <p className="sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-medium text-base ">
             <TypeAnimation
               sequence={[
                 'I build things for the web',
@@ -69,7 +69,10 @@ const Banner = () => {
           <img
             src={Profile_Image}
             alt="M Zaryab Khan"
-            className="w-40 h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 rounded-full shadow-lg object-cover"
+            className="w-40 h-40 
+            lg:w-48 lg:h-48 
+            xl:w-56 xl:h-56 
+            rounded-full shadow-lg object-cover"
           />
         </motion.div>
 
@@ -84,14 +87,15 @@ const Banner = () => {
             borderRadius: '50%',
             width: 'fit-content',
             height: 'fit-content',
-            padding: '0.5rem',
+            // padding: '0.5rem',
             margin: '0 auto'
           }}
         >
           <img
             src={Profile_Image}
             alt="M Zaryab Khan"
-            className="w-32 h-32 rounded-full shadow-lg object-cover"
+            className="w-32 h-32
+             rounded-full shadow-lg object-cover"
           />
         </motion.div>
       </div>
