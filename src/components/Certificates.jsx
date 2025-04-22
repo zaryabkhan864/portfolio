@@ -73,8 +73,8 @@ const Certificates = () => {
       aria-label="Certificates Section"
     >
       <div data-aos="fade-up">
-        <h2 className="font-poppins text-48px font-Bold text-solidHeadingDark mb-2">Certificates</h2>
-        <p className="font-poppins text-32px font-Regular text-lightContent mb-12">
+        <h2  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2">Certificates</h2>
+        <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
           Some of the certifications I’ve earned
         </p>
 

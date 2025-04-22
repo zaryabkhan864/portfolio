@@ -31,11 +31,11 @@ const Tech = () => {
       data-aos="fade-up">
         <h2
           id="tech-stack-heading"
-          className="font-poppins text-48px font-Bold text-solidHeadingDark mb-2"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2"
         >
           My Tech Stack
         </h2>
-        <p className="font-poppins text-32px font-Regular text-lightContent mb-12">
+        <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
           Technologies I’ve been working with recently
         </p>
 
@@ -50,7 +50,12 @@ const Tech = () => {
               <img
                 src={tech.src}
                 alt={tech.alt}
-                className="w-24 h-24 object-contain"
+                className="
+                w-14  h-14
+                sm:w-16 sm:h-16
+                md:w-20 md:h-20 
+                lg:w-24 lg:h-24
+                object-contain"
                 loading="lazy"
               />
             </div>

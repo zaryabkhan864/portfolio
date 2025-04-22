@@ -79,7 +79,7 @@ const AboutMe = () => {
         <motion.div variants={fadeUp} className="text-center mb-12">
           <h2
             id="about-me-heading"
-            className="font-poppins text-48px font-Bold text-white mb-2"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2"
           >
             About Me
           </h2>
@@ -87,7 +87,7 @@ const AboutMe = () => {
 
         {/* About Me Description */}
         <motion.div variants={fadeUp} className="space-y-6 mb-10">
-          <p className="font-poppins text-18px font-Regular text-lightContent">
+          <p className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins font-Regular text-lightContent">
             The Generator App is an online tool that helps you to export ready-made
             templates ready to work as your future website. It helps you to combine
             slides, panels and other components and export it as a set of static files:
@@ -97,7 +97,7 @@ const AboutMe = () => {
 
         {/* Work Experience */}
         <motion.div variants={fadeUp} className="space-y-10">
-          <h2 className="font-poppins text-42px font-Bold text-white mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-poppins font-Bold text-white mb-6">
             Work Experience
           </h2>
           <div className="space-y-6">
@@ -105,18 +105,18 @@ const AboutMe = () => {
               <motion.div key={i} custom={i} variants={fadeUp}>
                 <div className="flex flex-col md:flex-row md:justify-between">
                   <div className="mb-2 md:mb-0">
-                    <h3 className="font-poppins text-20px font-Regular text-white">
+                    <h3 className="font-poppins text-sm sm:text-md md:text-lg lg:text-xl font-Regular text-white">
                       {item.role}
                     </h3>
-                    <p className="font-poppins text-14px font-Regular text-lightContent">
+                    <p className="font-poppins text-xs md:text-sm xl:text-md font-Regular text-lightContent">
                       {item.company} @ {item.location}
                     </p>
                   </div>
                   <div className="flex flex-col md:items-end gap-1">
-                    <span className="font-poppins text-12px font-Semibold text-white bg-gray-700 bg-opacity-50 px-2 py-0.5 rounded-full w-fit">
+                    <span className="font-poppins text-sm font-Semibold text-white bg-gray-700 bg-opacity-50 px-2 py-0.5 rounded-full w-fit">
                       {item.type}
                     </span>
-                    <span className="font-poppins text-12px font-Regular text-lightContent">
+                    <span className="font-poppins text-sm font-Regular text-lightContent">
                       {item.date}
                     </span>
                   </div>
@@ -131,7 +131,7 @@ const AboutMe = () => {
 
         {/* Education */}
         <motion.div variants={fadeUp} className="space-y-10 mt-10">
-          <h2 className="font-poppins text-32px font-Bold text-white mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-poppins font-Bold text-white mb-6">
             Education
           </h2>
 
@@ -140,18 +140,18 @@ const AboutMe = () => {
             <motion.div variants={fadeUp}>
               <div className="flex flex-col md:flex-row md:justify-between">
                 <div className="mb-2 md:mb-0">
-                  <h3 className="font-poppins text-20px font-Bold text-white">
+                  <h3 className="font-poppins text-sm sm:text-md md:text-lg lg:text-xl font-Regular text-white">
                     Master in Computer Engineering
                   </h3>
-                  <p className="font-poppins text-14px font-Regular text-lightContent">
+                  <p className="font-poppins text-sm font-Regular text-lightContent">
                     Altinbas University @ Istanbul, Turkey
                   </p>
                 </div>
                 <div className="flex flex-col md:items-end gap-1">
-                  <span className="font-poppins text-12px font-Semibold text-white bg-gray-700 bg-opacity-50 px-2 py-0.5 rounded-full w-fit">
+                  <span className="font-poppins text-sm font-Semibold text-white bg-gray-700 bg-opacity-50 px-2 py-0.5 rounded-full w-fit">
                     Full Time
                   </span>
-                  <span className="font-poppins text-12px font-Regular text-lightContent">
+                  <span className="font-poppins text-sm font-Regular text-lightContent">
                     Aug 2016 - Dec 2020
                   </span>
                 </div>
@@ -162,18 +162,18 @@ const AboutMe = () => {
             <motion.div variants={fadeUp}>
               <div className="flex flex-col md:flex-row md:justify-between">
                 <div className="mb-2 md:mb-0">
-                  <h3 className="font-poppins text-20px font-Bold text-white">
+                  <h3 className="font-poppins text-sm sm:text-md md:text-lg lg:text-xl font-Regular text-white">
                     Bachelor Science in Computer Science
                   </h3>
-                  <p className="font-poppins text-14px font-Regular text-lightContent">
+                  <p className="font-poppins text-sm font-Regular text-lightContent">
                     Hamdard University @ Karachi, Pakistan
                   </p>
                 </div>
                 <div className="flex flex-col md:items-end gap-1">
-                  <span className="font-poppins text-12px font-Semibold text-white bg-gray-700 bg-opacity-50 px-2 py-0.5 rounded-full w-fit">
+                  <span className="font-poppins text-sm font-Semibold text-white bg-gray-700 bg-opacity-50 px-2 py-0.5 rounded-full w-fit">
                     Full Time
                   </span>
-                  <span className="font-poppins text-12px font-Regular text-lightContent">
+                  <span className="font-poppins text-sm font-Regular text-lightContent">
                     Aug 2016 - Dec 2020
                   </span>
                 </div>

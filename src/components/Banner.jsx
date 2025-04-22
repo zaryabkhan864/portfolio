@@ -26,14 +26,14 @@ const Banner = () => {
           transition={{ duration: 1.2, ease: 'easeOut' }}
           className=" w-1/2 md:w-1/2 lg:w-2/3 space-y-3 md:space-y-4  md:text-left"
         >
-          <h1 className="text-md sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold">Hi 👋</h1>
-          <h2 className="text-md sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">My name is</h2>
+          <h1 className="text-md sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-poppins font-semibold ">Hi 👋</h1>
+          <h2 className="text-md sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-poppins font-semibold">My name is</h2>
 
-          <h3 className="text-md sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-500">
+          <h3 className="text-md sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-poppins font-Bold  text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-500">
             M Zaryab Khan
           </h3>
 
-          <p className="sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-medium text-base ">
+          <p className="sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-poppins font-semibold text-base ">
             <TypeAnimation
               sequence={[
                 'I build things for the web',
