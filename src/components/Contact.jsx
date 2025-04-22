@@ -1,38 +1,7 @@
 import React from 'react'
 import contactImg from '../images/11.png'
-import { motion } from 'framer-motion'
 import FloatingUsers from '../animations/FloatingUsers ';
 
-const users = [
-  {
-    username: "@brook_sim",
-    eth: "4.78 ETH",
-    items: 206,
-    collections: 12,
-    avatar: "https://i.pravatar.cc/100?img=1",
-  },
-  {
-    username: "@marvinmckin",
-    eth: "7.55 ETH",
-    items: 479,
-    collections: 24,
-    avatar: "https://i.pravatar.cc/100?img=2",
-  },
-  {
-    username: "@esther_howard",
-    eth: "5.31 ETH",
-    items: 387,
-    collections: 10,
-    avatar: "https://i.pravatar.cc/100?img=3",
-  },
-  {
-    username: "@brook_sim",
-    eth: "3.14 ETH",
-    items: 24,
-    collections: 4,
-    avatar: "https://i.pravatar.cc/100?img=4",
-  },
-];
 
 const Contact = () => {
   return (

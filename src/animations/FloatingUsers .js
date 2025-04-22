@@ -59,11 +59,11 @@ const FloatingUsers = () => {
       {users.map((user, index) => (
         <motion.div
           key={index}
-          className={`absolute ${user.position}  bg-white shadow-xl rounded-2xl p-4 flex items-center gap-4`}
+          className={`absolute ${user.position}  bg-white shadow-xl rounded-2xl p-2 md:p-4 flex items-center gap-4`}
           initial={{ y: 0 }}
           animate={{ y: [0, -12, 0] }}
           transition={{
-            duration: 6,
+            duration: 9,
             repeat: Infinity,
             repeatType: "mirror",
             delay: user.delay,
@@ -76,10 +76,10 @@ const FloatingUsers = () => {
             className="w-14 h-14 rounded-full object-cover"
           />
           <div className="flex-1">
-            <div className="text-lg font-semibold text-black">
+            <div className="text-md font-poppins font-semibold text-black">
               {user.username}
             </div>
-            <div className="flex text-sm text-gray-500">
+            <div className="flex flex-col sm:flex-row text-sm text-gray-500">
                 <div className="pr-2">
                 🗂 Items {user.items} 
                 </div>
