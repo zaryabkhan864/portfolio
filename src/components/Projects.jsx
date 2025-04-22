@@ -67,7 +67,7 @@ const Projects = () => {
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
 
-      <div className="relative z-10 py-16 px-4 md:px-10">
+      <div className="relative z-10 py-16 px-2 md:px-10">
         <div className="max-w-6xl mx-auto text-white text-center">
           <h2         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2">Recent Projects</h2>
           <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
@@ -96,7 +96,7 @@ const Projects = () => {
                     <div className="flex justify-between font-poppins text-16px font-Regular items-center pt-4 border-t border-gray-700 mt-auto">
                       <a
                         href={project.liveLink}
-                        className="flex items-center gap-2 text-white text-sm hover:underline"
+                        className="flex items-center gap-2 text-white text-xs hover:underline"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -105,7 +105,7 @@ const Projects = () => {
                       </a>
                       <a
                         href={project.codeLink}
-                        className="flex items-center gap-2 text-white text-sm hover:underline"
+                        className="flex items-center gap-2 text-white text-xs hover:underline"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

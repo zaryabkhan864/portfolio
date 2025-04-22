@@ -67,10 +67,10 @@ const Contact = () => {
           >
             <form>
               <fieldset>
-                <legend className="text-xl font-semibold mb-4">Contact Form</legend>
+                <legend className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-poppins font-Bold mb-4">Contact Form</legend>
 
                 <div className="mb-4">
-                  <label htmlFor="name" className="block mb-1">
+                  <label htmlFor="name" className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins font-Regular block mb-1">
                     Your Name
                   </label>
                   <input
@@ -82,7 +82,7 @@ const Contact = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="email" className="block mb-1">
+                  <label htmlFor="email" className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins block mb-1">
                     Email Address
                   </label>
                   <input
@@ -97,7 +97,7 @@ const Contact = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="message" className="block mb-1">
+                  <label htmlFor="message" className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins block mb-1">
                     Write Your Messages
                   </label>
                   <textarea
