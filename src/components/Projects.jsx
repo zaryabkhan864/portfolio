@@ -69,8 +69,8 @@ const Projects = () => {
 
       <div className="relative z-10 py-16 px-4 md:px-10">
         <div className="max-w-6xl mx-auto text-white text-center">
-          <h2           className="font-poppins text-48px font-Bold text-solidHeadingDark mb-2">Recent Projects</h2>
-          <p className="font-poppins text-32px font-Regular text-lightContent mb-12">
+          <h2         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2">Recent Projects</h2>
+          <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
             Technologies I've been working with recently
           </p>
 
@@ -85,12 +85,12 @@ const Projects = () => {
                   />
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex-1">
-                      <h3 className="font-poppins font-medium text-26px  mb-2 text-left">{project.title}</h3>
-                      <p className="font-poppins text-18px/6 font-light mb-4 text-left line-clamp-4 ">
+                      <h3 className="font-poppins font-medium text-md sm:text-lg md:text-xl lg:text-2xl  mb-2 text-left">{project.title}</h3>
+                      <p className="font-poppins text-xs sm:text-sm md:text-md lg:text-lg font-light mb-4 text-left line-clamp-4 ">
                         {project.description}
                       </p>
                       <p className="text-sm font-medium text-gray-300 mb-4 text-left">
-                        <span className="text-white font-poppins text-14px font-light">Tech stack:</span> {project.techStack}
+                        <span className="text-white font-poppins text-sm font-light">Tech stack:</span> {project.techStack}
                       </p>
                     </div>
                     <div className="flex justify-between font-poppins text-16px font-Regular items-center pt-4 border-t border-gray-700 mt-auto">

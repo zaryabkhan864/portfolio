@@ -43,10 +43,10 @@ const Contact = () => {
     >
       <div data-aos="fade-up" data-aos-duration="1000">
         <div className="text-center mb-12">
-          <h2 className="font-poppins text-48px font-Bold text-solidHeadingDark mb-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2">
             Contact Me
           </h2>
-          <p className="font-poppins text-32px font-Regular text-lightContent mb-12">
+          <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
             For any questions please mail us:
           </p>
         </div>
