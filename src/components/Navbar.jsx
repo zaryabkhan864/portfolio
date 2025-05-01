@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../images/logo.png';
+import logo from '../images/newlogo.png';
 import { FaBars, FaTimes, FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -13,9 +13,9 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/', id: 'home' },
     { name: 'About', href: '/about', id: 'about' },
-    { name: 'Tech Stack', href: '#techstack', id: 'techstack' },
-    { name: 'Projects', href: '#projects', id: 'projects' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    { name: 'Tech Stack', href: '/tech-stack', id: 'techstack' },
+    { name: 'Projects', href: '/projects', id: 'projects' },
+    { name: 'Contact', href: '/contact', id: 'contact' },
   ];
 
   // Scroll direction logic
@@ -80,11 +80,11 @@ const Navbar = () => {
     >
       {/* Logo */}
       <div className="flex items-center space-x-2">
-      <img
-  src={logo}
-  alt="MZK Logo"
-  className="w-24 sm:w-32 md:w-36 lg:w-44 xl:w-52 h-auto object-contain"
-/>
+        <img
+          src={logo}
+          alt="MZK Logo"
+          className="w-24 sm:w-32 md:w-36 lg:w-32 xl:w-24 h-auto object-contain"
+        />
       </div>
 
       {/* Desktop Menu (xl and above only) */}
@@ -101,13 +101,13 @@ const Navbar = () => {
           </Link>
         ))}
 
-        {/* Social Icons */}
+        {/* Social Icons with glow */}
         <div className="flex space-x-4 ml-6">
           <a
             href="https://github.com/your-username"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-royalBlue"
+            className="glow-hover p-1 rounded"
           >
             <FaGithub size={20} />
           </a>
@@ -115,7 +115,7 @@ const Navbar = () => {
             href="https://twitter.com/your-username"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-royalBlue"
+            className="glow-hover p-1 rounded"
           >
             <FaTwitter size={20} />
           </a>
@@ -123,7 +123,7 @@ const Navbar = () => {
             href="https://linkedin.com/in/your-username"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-royalBlue"
+            className="glow-hover p-1 rounded"
           >
             <FaLinkedin size={20} />
           </a>
@@ -151,13 +151,13 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex space-x-4 pt-2">
-            <a href="https://github.com/your-username" target="_blank" rel="noreferrer">
+            <a href="https://github.com/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaGithub />
             </a>
-            <a href="https://twitter.com/your-username" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaTwitter />
             </a>
-            <a href="https://linkedin.com/in/your-username" target="_blank" rel="noreferrer">
+            <a href="https://linkedin.com/in/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaLinkedin />
             </a>
           </div>

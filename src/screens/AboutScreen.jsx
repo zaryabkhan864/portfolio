@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 
-const About = () => {
+const AboutScreen = () => {
   return (
     <React.Fragment>
         <Navbar/>
@@ -15,4 +15,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutScreen

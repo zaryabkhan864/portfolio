@@ -10,7 +10,7 @@ import Footer from '../components/Footer'
 import ScrollFadeIn from '../animations/ScrollFadeIn'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-const Home = () => {
+const HomeScreen = () => {
     useEffect(() => {
         AOS.init({
             duration: 800,
@@ -31,4 +31,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default HomeScreen

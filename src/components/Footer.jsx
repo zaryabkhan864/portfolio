@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/logo.png';
+import logo from '../images/newlogo.png';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
@@ -8,14 +8,14 @@ const Footer = () => {
       <div className="w-full max-w-7xl mx-auto">
 
         {/* Logo and Contact */}
-        <div className="flex flex-col sm:flex-col lg:flex-row 2xl:flex-row justify-between items-center mb-4 gap-4">
+        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row 2xl:flex-row justify-between items-center mb-4 gap-4">
           <img
             src={logo}
             alt="MZK Logo"
-            className="w-48 md:w-60 object-contain"
+            className="w-28 md:w-44 object-contain"
             aria-label="Company Logo"
           />
-          <div className="flex flex-col sm:flex-col lg:flex-row 2xl:flex-row sm:gap-6 gap-2 font-DMSans text-18px font-Regular text-center lg:text-left items-center">
+          <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row 2xl:flex-row sm:gap-6 gap-2 font-DMSans text-18px font-Regular text-center lg:text-left items-center">
             <div aria-label="Phone Number">+90-507-4467087</div>
             <div aria-label="Email">zaryabkhan864@gmail.com</div>
             <div className="flex space-x-4 ml-0 sm:ml-4">
