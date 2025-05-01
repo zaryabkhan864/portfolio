@@ -53,11 +53,11 @@ const Footer = () => {
         {/* Navigation & Credit */}
         <div className="flex flex-col lg:flex-col 2xl:flex-row justify-between items-center gap-4">
           <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-center font-DMSans text-18px font-Regular" aria-label="Footer Navigation">
-            <a href="#" className="glow-hover-text" aria-label="Home">Home</a>
-            <a href="#" className="glow-hover-text" aria-label="About">About</a>
-            <a href="#" className="glow-hover-text" aria-label="Technologies">Technologies</a>
-            <a href="#" className="glow-hover-text" aria-label="Projects">Projects</a>
-            <a href="#" className="glow-hover-text" aria-label="Contact">Contact</a>
+            <a href="/home" className="glow-hover-text" aria-label="Home">Home</a>
+            <a href="/about" className="glow-hover-text" aria-label="About">About</a>
+            <a href="/tech-stack" className="glow-hover-text" aria-label="Technologies">Technologies</a>
+            <a href="/projects" className="glow-hover-text" aria-label="Projects">Projects</a>
+            <a href="/contact" className="glow-hover-text" aria-label="Contact">Contact</a>
           </nav>
           <div className="font-poppins text-18px font-Regular text-center lg:text-right" aria-label="Footer Credit">
             Designed and built by

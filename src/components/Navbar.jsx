@@ -18,13 +18,12 @@ const Navbar = () => {
     { name: 'Contact', href: '/contact', id: 'contact' },
   ];
 
-  // Scroll direction logic
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        setShowNavbar(false); // scrolling down
+        setShowNavbar(false);
       } else {
-        setShowNavbar(true); // scrolling up
+        setShowNavbar(true);
       }
       setLastScrollY(window.scrollY);
     };
@@ -33,7 +32,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Active section logic
   useEffect(() => {
     const path = location.pathname;
 
@@ -72,98 +70,111 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-6 xl:px-16 
-      bg-transparent text-white transition-transform duration-300 ${
-        showNavbar ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
-      {/* Logo */}
-      <div className="flex items-center space-x-2">
-        <img
-          src={logo}
-          alt="MZK Logo"
-          className="w-24 sm:w-32 md:w-36 lg:w-32 xl:w-24 h-auto object-contain"
-        />
-      </div>
-
-      {/* Desktop Menu (xl and above only) */}
-      <div className="hidden xl:flex items-center space-x-4 md:space-x-5 lg:space-x-6 font-DMSans font-medium text-base">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            to={link.href}
-            className={`hover:text-royalBlue transition ${
-              activeSection === link.id ? 'text-royalBlue font-semibold' : ''
-            }`}
-          >
-            {link.name}
-          </Link>
-        ))}
-
-        {/* Social Icons with glow */}
-        <div className="flex space-x-4 ml-6">
-          <a
-            href="https://github.com/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glow-hover p-1 rounded"
-          >
-            <FaGithub size={20} />
-          </a>
-          <a
-            href="https://twitter.com/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glow-hover p-1 rounded"
-          >
-            <FaTwitter size={20} />
-          </a>
-          <a
-            href="https://linkedin.com/in/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glow-hover p-1 rounded"
-          >
-            <FaLinkedin size={20} />
-          </a>
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-6 xl:px-16 
+        bg-transparent text-white transition-transform duration-300 ${
+          showNavbar ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <img
+            src={logo}
+            alt="MZK Logo"
+            className="w-24 sm:w-32 md:w-36 lg:w-32 xl:w-24 h-auto object-contain"
+          />
         </div>
-      </div>
 
-      {/* Hamburger Menu Button (below xl) */}
-      <div className="xl:hidden">
-        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
-      </div>
+        {/* Desktop Menu */}
+        <div className="hidden xl:flex items-center space-x-4 md:space-x-5 lg:space-x-6 font-DMSans font-medium text-base">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              className={`hover:text-royalBlue transition ${
+                activeSection === link.id ? 'text-royalBlue font-semibold' : ''
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-full right-4 mt-2 w-52 bg-black bg-opacity-95 rounded-lg p-4 space-y-4 text-sm font-light xl:hidden shadow-lg backdrop-blur">
+          {/* Social Icons */}
+          <div className="flex space-x-4 ml-6">
+            <a
+              href="https://github.com/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glow-hover p-1 rounded"
+            >
+              <FaGithub size={20} />
+            </a>
+            <a
+              href="https://twitter.com/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glow-hover p-1 rounded"
+            >
+              <FaTwitter size={20} />
+            </a>
+            <a
+              href="https://linkedin.com/in/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glow-hover p-1 rounded"
+            >
+              <FaLinkedin size={20} />
+            </a>
+          </div>
+        </div>
+
+        {/* Hamburger Button */}
+        <div className="xl:hidden">
+          <button onClick={() => setIsOpen(true)} aria-label="Open menu">
+            <FaBars size={24} />
+          </button>
+        </div>
+      </nav>
+
+      {/* Full Screen Mobile Drawer */}
+      <div
+        className={`fixed top-0 left-0 w-full h-screen bg-black bg-opacity-95 backdrop-blur-md z-50 text-white transition-transform duration-300 xl:hidden ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex justify-end p-6">
+          <button onClick={() => setIsOpen(false)} aria-label="Close menu">
+            <FaTimes size={28} />
+          </button>
+        </div>
+
+        <div className="flex flex-col items-center justify-center h-[80%] space-y-6 text-lg font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
               onClick={() => setIsOpen(false)}
-              className="block text-white hover:text-royalBlue"
+              className="hover:text-royalBlue transition"
             >
               {link.name}
             </Link>
           ))}
-          <div className="flex space-x-4 pt-2">
+
+          <div className="flex space-x-6 pt-6">
             <a href="https://github.com/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
-              <FaGithub />
+              <FaGithub size={20} />
             </a>
             <a href="https://twitter.com/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
-              <FaTwitter />
+              <FaTwitter size={20} />
             </a>
             <a href="https://linkedin.com/in/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
-              <FaLinkedin />
+              <FaLinkedin size={20} />
             </a>
           </div>
         </div>
-      )}
-    </nav>
+      </div>
+    </>
   );
 };
 

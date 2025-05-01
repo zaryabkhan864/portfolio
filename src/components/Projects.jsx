@@ -60,7 +60,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative w-full bg-cover bg-center bg-no-repeat bg-fixed text-white px-8 md:px-16 py-24"
+      className="relative w-full bg-cover bg-center bg-no-repeat bg-fixed text-white px-2 md:px-16 py-24"
       style={{
         backgroundImage: `url(${P_BG})`,
       }}
