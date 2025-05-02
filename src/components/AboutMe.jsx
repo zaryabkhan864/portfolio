@@ -77,8 +77,8 @@ const AboutMe = () => {
     id="about-me"
     className="w-full  items-center min-h-screen  text-white py-20 px-4 sm:px-6 lg:px-8 relative bg-cover  bg-center bg-no-repeat bg-fixed"
     style={{
-      backgroundImage: `url(${WE_BG})`,
-
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll'
     }}
   >
       {/* Overlay */}
