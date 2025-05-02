@@ -1,22 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Profile_Image from '../images/profile_image.png'
-import Banner_Image from '../images/banner-mobile.png'
+import Banner_Image from '../images/banner.png'
+import Banner_Image_Mobile from '../images/ms1.png'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 
 const Banner = () => {
+  const [backgroundImage, setBackgroundImage] = useState(Banner_Image)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBackgroundImage(Banner_Image_Mobile)
+      } else {
+        setBackgroundImage(Banner_Image)
+      }
+    }
+
+    // Initial check
+    handleResize()
+
+    // Resize event listener
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section
       id="home"
       className="min-h-screen w-full bg-cover bg-center bg-fixed bg-no-repeat text-white 
       px-6 md:px-16 flex items-center justify-center relative"
       style={{
-        backgroundImage: `url(${Banner_Image})`,
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      {/* Dark Overlay */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-30 z-0"></div> */}
-
       {/* Main Content Container */}
       <div className="w-full max-w-6xl flex flex-row md:flex-row items-center justify-between z-10 py-16">
         {/* Text Content */}
@@ -87,7 +104,6 @@ const Banner = () => {
             borderRadius: '50%',
             width: 'fit-content',
             height: 'fit-content',
-            // padding: '0.5rem',
             margin: '0 auto'
           }}
         >
