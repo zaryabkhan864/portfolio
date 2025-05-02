@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Profile_Image from '../images/profile_image.png'
 import Banner_Image from '../images/banner.png'
 import Banner_Image_Mobile from '../images/banner-mobile.png'
@@ -6,23 +6,32 @@ import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 
 const Banner = () => {
+  const [backgroundImage, setBackgroundImage] = useState(Banner_Image)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBackgroundImage(Banner_Image_Mobile)
+      } else {
+        setBackgroundImage(Banner_Image)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section
       id="home"
       className="min-h-screen w-full text-white px-6 md:px-16 flex items-center justify-center relative bg-cover bg-center bg-no-repeat md:bg-fixed"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
     >
-      {/* Responsive background image using <picture> */}
-      <picture>
-        <source media="(max-width: 767px)" srcSet={Banner_Image_Mobile} />
-        <img
-          src={Banner_Image}
-          alt="Banner Background"
-          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-        />
-      </picture>
-
       <div className="w-full max-w-6xl flex flex-row md:flex-row items-center justify-between z-10 py-16">
-        {/* Left Text Content */}
+        {/* Text + Typing Animation */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +62,7 @@ const Banner = () => {
           </p>
         </motion.div>
 
-        {/* Profile Image for Desktop */}
+        {/* Desktop Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -75,7 +84,7 @@ const Banner = () => {
           />
         </motion.div>
 
-        {/* Profile Image for Mobile */}
+        {/* Mobile Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
