@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Profile_Image from '../images/profile_image.png'
 import Banner_Image from '../images/banner.png'
-import Banner_Image_Mobile from '../images/ms1.png'
+import Banner_Image_Mobile from '../images/banner-mobile.png'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 
