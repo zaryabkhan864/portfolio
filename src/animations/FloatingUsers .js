@@ -59,7 +59,7 @@ const FloatingUsers = () => {
       {users.map((user, index) => (
         <motion.div
           key={index}
-          className={`absolute ${user.position}  bg-white shadow-xl rounded-2xl p-2 md:p-4 flex items-center gap-4`}
+          className={`absolute ${user.position}  bg-white shadow-xl rounded-2xl p-1 sm:p-4 md:p-4 lg:p-4 xl:p-2 2xl:p-4 3xl:p-2 4xl:p-4 flex items-center gap-4`}
           initial={{ y: 0 }}
           animate={{ y: [0, -12, 0] }}
           transition={{
@@ -73,14 +73,14 @@ const FloatingUsers = () => {
           <img
             src={user.avatar}
             alt="Avatar"
-            className="w-14 h-14 rounded-full object-cover"
+            className="w-14 h-14 xs:w-14 xs:h-14 sm:w-14 sm:h-14 md:w-14 md:h-14 lg:w-14 lg:h-14 xl:w-10 xl:h-10 2xl:w-14 2xl:h-14 3xl:w-12 3xl:h-12 4xl:w-14 4xl:h-14  rounded-full object-cover"
           />
           <div className="flex-1">
-            <div className="text-md font-poppins font-semibold text-black">
+            <div className="text-md sm:text-md md:text-md lg:text-md xl:text-sm 2xl:text-md 3xl:text-sm 4xl:text-md font-poppins font-semibold text-black">
               {user.username}
             </div>
-            <div className="flex flex-col sm:flex-row text-sm text-gray-500">
-                <div className="pr-2">
+            <div className="flex flex-col sm:flex-row  text-gray-500 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-xs 2xl:text-sm 3xl:text-xs 4xl:text-sm"  >
+                <div className="pr-2 ">
                 🗂 Items {user.items} 
                 </div>
                 <div className="pl-2">
@@ -89,7 +89,7 @@ const FloatingUsers = () => {
              
             </div>
           </div>
-          <div className="text-purple-500 font-bold text-sm">{user.eth}</div>
+          <div className="text-purple-500 font-bold text-sm sm:text-sm md:text-sm lg:text-sm xl:text-xs 2xl:text-xs 3xl:text-xs 4xl:text-sm">{user.eth}</div>
         </motion.div>
       ))}
     </div>

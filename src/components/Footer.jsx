@@ -8,14 +8,14 @@ const Footer = () => {
       <div className="w-full max-w-7xl mx-auto">
 
         {/* Logo and Contact */}
-        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row 2xl:flex-row justify-between items-center mb-4 gap-4">
+        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-col 2xl:flex-col 3xl:flex-col 4xl:flex-row  justify-between items-center mb-4 gap-4">
           <img
             src={logo}
             alt="MZK Logo"
             className="w-28 md:w-44 object-contain"
             aria-label="Company Logo"
           />
-          <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row 2xl:flex-row sm:gap-6 gap-2 font-DMSans text-18px font-Regular text-center lg:text-left items-center">
+          <div className="flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row sm:gap-6 gap-2 font-DMSans text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg font-Regular text-center lg:text-left items-center">
             <div aria-label="Phone Number">+90-507-4467087</div>
             <div aria-label="Email">zaryabkhan864@gmail.com</div>
             <div className="flex space-x-4 ml-0 sm:ml-4">
@@ -52,14 +52,14 @@ const Footer = () => {
 
         {/* Navigation & Credit */}
         <div className="flex flex-col lg:flex-col 2xl:flex-row justify-between items-center gap-4">
-          <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-center font-DMSans text-18px font-Regular" aria-label="Footer Navigation">
+          <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-center font-DMSans text-xs md:text-md lg:text-md xl:text-md 2xl:text-lg font-Regular" aria-label="Footer Navigation">
             <a href="/" className="glow-hover-text" aria-label="Home">Home</a>
             <a href="/about" className="glow-hover-text" aria-label="About">About</a>
             <a href="/tech-stack" className="glow-hover-text" aria-label="Technologies">Technologies</a>
             <a href="/projects" className="glow-hover-text" aria-label="Projects">Projects</a>
             <a href="/contact" className="glow-hover-text" aria-label="Contact">Contact</a>
           </nav>
-          <div className="font-poppins text-18px font-Regular text-center lg:text-right" aria-label="Footer Credit">
+          <div className="font-poppins text-xs md:text-md lg:text-md xl:text-md 2xl:text-lg font-Regular lg:text-right" aria-label="Footer Credit">
             Designed and built by
             <span className="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent px-1"> Muhammad Zayab Khan </span>
             With

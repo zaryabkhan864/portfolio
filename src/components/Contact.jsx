@@ -115,18 +115,18 @@ const Contact = () => {
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 3xl:grid-cols-2">
           {/* Contact Form */}
           <div
-            className="p-6 md:p-10 bg-gradient-to-r from-black to-zinc-800 shadow-lg font-poppins rounded-bl-2xl"
+            className="ps-2 xl:ps-3 xl:pe-0 2xl:p-4 md:p-10 bg-gradient-to-r from-black to-zinc-800 shadow-lg font-poppins rounded-bl-2xl"
             aria-label="Contact Form Container"
           >
             <form ref={form} onSubmit={sendEmail}>
               <fieldset>
-                <legend className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-poppins font-Bold mb-4">Contact Form</legend>
+                <legend className="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-xl 2xl:text-3xl   font-poppins font-Bold mb-4">Contact Form</legend>
 
                 <div className="mb-4">
-                  <label htmlFor="name" className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins font-Regular block mb-1">
+                  <label htmlFor="name" className="text-sm sm:text-md md:text-lg lg:text-lg xl:text-sm 2xl:text-lg 3xl:text-lg 4xl:text-xl  font-poppins font-Regular block mb-1">
                     Your Name
                   </label>
                   <input
@@ -140,7 +140,7 @@ const Contact = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="email" className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins block mb-1">
+                  <label htmlFor="email" className="text-sm sm:text-md md:text-lg lg:text-lg xl:text-sm 2xl:text-lg 3xl:text-lg 4xl:text-xl font-poppins block mb-1">
                     Email Address
                   </label>
                   <input
@@ -157,7 +157,7 @@ const Contact = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="message" className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins block mb-1">
+                  <label htmlFor="message" className="text-sm sm:text-md md:text-lg lg:text-lg xl:text-sm 2xl:text-lg 3xl:text-lg 4xl:text-xl font-poppins block mb-1">
                     Write Your Messages
                   </label>
                   <textarea
@@ -181,7 +181,7 @@ const Contact = () => {
           </div>
 
           {/* Animated User Cards */}
-          <div className="p-6 bg-gradient-to-l from-black to-zinc-800 shadow-lg rounded-br-2xl rounded-tr-2xl flex flex-col items-center justify-center gap-6">
+          <div className="ps-2 2xl:p-4 bg-gradient-to-l from-black to-zinc-800 shadow-lg rounded-br-2xl rounded-tr-2xl flex flex-col items-center justify-center gap-6">
             <FloatingUsers/>
           </div>
         </div>

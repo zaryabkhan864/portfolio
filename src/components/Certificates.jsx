@@ -5,6 +5,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import cc1 from '../images/cc1.png'
 import cc2 from '../images/cc2.png'
 import cc3 from '../images/cc3.png'
+import cc4 from '../images/cc4.jpg'
 
 const Certificates = () => {
   const handleDragStart = (e) => e.preventDefault()
@@ -58,6 +59,22 @@ const Certificates = () => {
         />
       </div>
     </div>,
+     <div
+     key="4"
+     className="p-4 md:p-6 lg:p-8 w-full h-full flex justify-center"
+     data-aos="zoom-in"
+     data-aos-delay="300"
+   >
+     <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-[6px] rounded-2xl shadow-xl">
+       <img
+         src={cc4}
+         alt="Managing Big Data with MySQL Certificate"
+         onDragStart={handleDragStart}
+         role="presentation"
+         className="rounded-xl object-contain w-full max-w-[400px] h-auto transition-transform duration-300 hover:scale-105"
+       />
+     </div>
+   </div>,
   ]
   
   const responsive = {
