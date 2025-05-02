@@ -59,7 +59,8 @@ const sliderSettings = {
 
 const Projects = () => {
   const [backgroundImage, setBackgroundImage] = useState(P_BG)
-    useEffect(() => {
+
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setBackgroundImage(Banner_Image_Mobile)
@@ -75,9 +76,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="  text-white px-2 md:px-16 py-24 justify-center relative   bg-cover bg-center bg-no-repeat bg-fixed"
+      className="  text-white px-2 md:px-16 py-24 justify-center relative   bg-cover bg-center bg-no-repeat md:bg-fixed"
       style={{
-        backgroundImage: `url(${P_BG})`,
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll'
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
