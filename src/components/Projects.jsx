@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 import { FaGithub, FaCode } from 'react-icons/fa';
-import P_BG_Desktop from '../images/projects_background.png';
-import P_BG_Mobile from '../images/projects_background-mobile.png';
-import p1 from '../images/p1.jpg';
-import p2 from '../images/p2.png';
-import p3 from '../images/p3.png';
+import P_BG from '../images/projects_background.png'
+import Banner_Image_Mobile from '../images/banner-mobile.png'
+import p1 from '../images/p1.jpg'
+import p2 from '../images/p2.png'
+import p3 from '../images/p3.png'
 import Slider from "react-slick";
-
 const projects = [
   {
     title: "School Management System",
@@ -43,8 +42,8 @@ const sliderSettings = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
-  arrows: false,
-  autoplay: true,
+  arrows: false, // hide left/right buttons
+  autoplay: true, // auto slide
   autoplaySpeed: 3000,
   responsive: [
     {
@@ -59,37 +58,33 @@ const sliderSettings = {
 };
 
 const Projects = () => {
-  const [backgroundImage, setBackgroundImage] = useState(P_BG_Desktop);
-
-  useEffect(() => {
+  const [backgroundImage, setBackgroundImage] = useState(P_BG)
+    useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setBackgroundImage(P_BG_Mobile);
+        setBackgroundImage(Banner_Image_Mobile)
       } else {
-        setBackgroundImage(P_BG_Desktop);
+        setBackgroundImage(P_BG)
       }
-    };
+    }
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
   return (
     <section
       id="projects"
-      className="min-h-screen w-full text-white px-6 md:px-16 flex items-center justify-center relative bg-cover bg-center bg-no-repeat md:bg-fixed"
+      className="w-full  items-center min-h-screen  text-white px-2 md:px-16 py-24 justify-center relative   bg-cover bg-center bg-no-repeat md:bg-fixed"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${P_BG})`,
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
 
       <div className="relative z-10 py-16 px-2 md:px-10">
         <div className="max-w-6xl mx-auto text-white text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2">
-            Recent Projects
-          </h2>
+          <h2         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2">Recent Projects</h2>
           <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
             Technologies I've been working with recently
           </p>
@@ -105,10 +100,8 @@ const Projects = () => {
                   />
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex-1">
-                      <h3 className="font-poppins font-medium text-md sm:text-lg md:text-xl lg:text-2xl mb-2 text-left">
-                        {project.title}
-                      </h3>
-                      <p className="font-poppins text-xs sm:text-sm md:text-md lg:text-lg font-light mb-4 text-left line-clamp-4">
+                      <h3 className="font-poppins font-medium text-md sm:text-lg md:text-xl lg:text-2xl  mb-2 text-left">{project.title}</h3>
+                      <p className="font-poppins text-xs sm:text-sm md:text-md lg:text-lg font-light mb-4 text-left line-clamp-4 ">
                         {project.description}
                       </p>
                       <p className="text-sm font-medium text-gray-300 mb-4 text-left">
