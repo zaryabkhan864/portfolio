@@ -78,13 +78,9 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative w-full text-white px-2 md:px-16 py-24 bg-center bg-no-repeat bg-fixed bg-cover"
+      className="min-h-screen w-full text-white px-6 md:px-16 flex items-center justify-center relative bg-cover bg-center bg-no-repeat md:bg-fixed"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        minHeight: '100vh',
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
