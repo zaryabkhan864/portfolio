@@ -75,7 +75,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full  items-center min-h-screen  text-white px-2 md:px-16 py-24 justify-center relative   bg-cover bg-center bg-no-repeat md:bg-fixed"
+      className="  text-white px-2 md:px-16 py-24 justify-center relative   bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
         backgroundImage: `url(${P_BG})`,
       }}

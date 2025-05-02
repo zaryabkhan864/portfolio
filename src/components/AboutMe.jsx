@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import WE_BG from "../images/workexperience_background.png";
+import Banner_Image_Mobile from '../images/workexperience_background.png'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,16 +17,22 @@ const fadeUp = {
 };
 
 const AboutMe = () => {
-  const [backgroundAttachment, setBackgroundAttachment] = useState("scroll");
+
+  const [backgroundImage, setBackgroundImage] = useState(WE_BG)
 
   useEffect(() => {
     const handleResize = () => {
-      setBackgroundAttachment(window.innerWidth < 768 ? "scroll" : "fixed");
-    };
-    handleResize(); // run on mount
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+      if (window.innerWidth < 768) {
+        setBackgroundImage(Banner_Image_Mobile)
+      } else {
+        setBackgroundImage(WE_BG)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const experienceData = [
     {
@@ -67,15 +74,13 @@ const AboutMe = () => {
 
   return (
     <section
-      id="about-me"
-      className="relative bg-center bg-no-repeat bg-cover text-white py-20 px-4 sm:px-6 lg:px-8"
-      style={{
-        backgroundImage: `url(${WE_BG})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundAttachment: backgroundAttachment,
-      }}
-    >
+    id="about-me"
+    className="w-full  items-center min-h-screen  text-white py-20 px-4 sm:px-6 lg:px-8 relative bg-cover  bg-center bg-no-repeat bg-fixed"
+    style={{
+      backgroundImage: `url(${WE_BG})`,
+
+    }}
+  >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
 
@@ -100,7 +105,9 @@ const AboutMe = () => {
         <motion.div variants={fadeUp} className="space-y-6 mb-10">
           <p className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins font-Regular text-lightContent">
             The Generator App is an online tool that helps you to export ready-made
-            templates ready to work as your future website...
+            templates ready to work as your future website. It helps you to combine
+            slides, panels and other components and export it as a set of static files:
+            HTML/CSS/JS.
           </p>
         </motion.div>
 
