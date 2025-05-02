@@ -1,6 +1,6 @@
 import React from 'react'
 import Profile_Image from '../images/profile_image.png'
-import Banner_Image from '../images/banner.png'
+import Banner_Image from '../images/banner-mobile.png'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 
@@ -62,7 +62,7 @@ const Banner = () => {
             borderRadius: '50%',
             width: 'fit-content',
             height: 'fit-content',
-            padding: '0.5rem',
+            padding: '0rem',
             marginLeft: '2rem'
           }}
         >

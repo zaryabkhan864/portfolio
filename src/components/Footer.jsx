@@ -20,7 +20,7 @@ const Footer = () => {
             <div aria-label="Email">zaryabkhan864@gmail.com</div>
             <div className="flex space-x-4 ml-0 sm:ml-4">
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/zaryabkhan864"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glow-hover p-1 rounded"
@@ -36,7 +36,7 @@ const Footer = () => {
                 <FaTwitter size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/your-username"
+                href="https://www.linkedin.com/in/khanzaryab/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glow-hover p-1 rounded"
@@ -53,7 +53,7 @@ const Footer = () => {
         {/* Navigation & Credit */}
         <div className="flex flex-col lg:flex-col 2xl:flex-row justify-between items-center gap-4">
           <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-center font-DMSans text-18px font-Regular" aria-label="Footer Navigation">
-            <a href="/home" className="glow-hover-text" aria-label="Home">Home</a>
+            <a href="/" className="glow-hover-text" aria-label="Home">Home</a>
             <a href="/about" className="glow-hover-text" aria-label="About">About</a>
             <a href="/tech-stack" className="glow-hover-text" aria-label="Technologies">Technologies</a>
             <a href="/projects" className="glow-hover-text" aria-label="Projects">Projects</a>

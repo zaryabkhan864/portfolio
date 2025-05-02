@@ -103,7 +103,7 @@ const Navbar = () => {
           {/* Social Icons */}
           <div className="flex space-x-4 ml-6">
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/zaryabkhan864"
               target="_blank"
               rel="noopener noreferrer"
               className="glow-hover p-1 rounded"
@@ -119,7 +119,7 @@ const Navbar = () => {
               <FaTwitter size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/your-username"
+              href="https://www.linkedin.com/in/khanzaryab/"
               target="_blank"
               rel="noopener noreferrer"
               className="glow-hover p-1 rounded"
@@ -162,13 +162,13 @@ const Navbar = () => {
           ))}
 
           <div className="flex space-x-6 pt-6">
-            <a href="https://github.com/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
+            <a href="https://github.com/zaryabkhan864" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaGithub size={20} />
             </a>
             <a href="https://twitter.com/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaTwitter size={20} />
             </a>
-            <a href="https://linkedin.com/in/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
+            <a href="https://www.linkedin.com/in/khanzaryab/" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaLinkedin size={20} />
             </a>
           </div>
