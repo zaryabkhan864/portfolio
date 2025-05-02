@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Profile_Image from '../images/profile_image.png'
 import Banner_Image from '../images/banner.png'
-import Banner_Image_Mobile from '../images/banner-mobile.png'
+import Banner_Image_Mobile from '../images/banner-mobile.png' // <-- Use high-quality image here
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 
@@ -17,10 +17,7 @@ const Banner = () => {
       }
     }
 
-    // Initial check
     handleResize()
-
-    // Resize event listener
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
@@ -34,9 +31,7 @@ const Banner = () => {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      {/* Main Content Container */}
       <div className="w-full max-w-6xl flex flex-row md:flex-row items-center justify-between z-10 py-16">
-        {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -68,7 +63,6 @@ const Banner = () => {
           </p>
         </motion.div>
 
-        {/* Profile Image - Desktop */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -93,7 +87,6 @@ const Banner = () => {
           />
         </motion.div>
 
-        {/* Profile Image - Mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
