@@ -72,29 +72,27 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-6 xl:px-16 
-        bg-transparent text-white transition-transform duration-300 ${
-          showNavbar ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-4 xl:px-12 
+        bg-transparent text-white transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'
+          }`}
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img
             src={logo}
             alt="MZK Logo"
-            className="w-24 sm:w-32 md:w-36 lg:w-32 xl:w-24 h-auto object-contain"
+            className="w-16 xs:w-20  lg:w-24 h-auto object-contain"
           />
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden xl:flex items-center space-x-4 md:space-x-5 lg:space-x-6 font-DMSans font-medium text-base">
+        <div className="hidden 2xl:flex items-center space-x-4 md:space-x-5 lg:space-x-6 2xl:space-x-5 3xl:space-x-6  font-DMSans font-medium text-base 2xl:text-xs 3xl:text-base">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
-              className={`hover:text-royalBlue transition ${
-                activeSection === link.id ? 'text-royalBlue font-semibold' : ''
-              }`}
+              className={`hover:text-royalBlue transition ${activeSection === link.id ? 'text-royalBlue font-semibold' : ''
+                }`}
             >
               {link.name}
             </Link>
@@ -130,7 +128,7 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger Button */}
-        <div className="xl:hidden">
+        <div className="2xl:hidden">
           <button onClick={() => setIsOpen(true)} aria-label="Open menu">
             <FaBars size={24} />
           </button>
@@ -139,9 +137,8 @@ const Navbar = () => {
 
       {/* Full Screen Mobile Drawer */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-black bg-opacity-95 backdrop-blur-md z-50 text-white transition-transform duration-300 xl:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 w-full h-screen bg-black bg-opacity-95 backdrop-blur-md z-50 text-white transition-transform duration-300 2xl:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="flex justify-end p-6">
           <button onClick={() => setIsOpen(false)} aria-label="Close menu">
