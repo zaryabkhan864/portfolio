@@ -62,10 +62,9 @@ const Navbar = () => {
 
       return () => window.removeEventListener('scroll', handleScroll);
     } else {
-      const routeToSection = {
-        '/about': 'about',
-      };
-      setActiveSection(routeToSection[path] || '');
+      const match = navLinks.find(link => link.href === path);
+      setActiveSection(match?.id || '');
+
     }
   }, [location]);
 
@@ -91,8 +90,9 @@ const Navbar = () => {
             <Link
               key={link.href}
               to={link.href}
-              className={`hover:text-royalBlue transition ${activeSection === link.id ? 'text-royalBlue font-semibold' : ''
-                }`}
+              style={activeSection === link.id ? { textShadow: '0 0 5px #9294F8, 0 0 10px #9294F8' } : {}}
+              className={`transition glow-hover-text ${activeSection === link.id ? 'text-blue-950 font-bold' : ''}`}
+
             >
               {link.name}
             </Link>
@@ -152,7 +152,7 @@ const Navbar = () => {
               key={link.href}
               to={link.href}
               onClick={() => setIsOpen(false)}
-              className="hover:text-royalBlue transition"
+              className="glow-hover-text transition"
             >
               {link.name}
             </Link>

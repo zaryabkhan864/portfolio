@@ -40,47 +40,75 @@ const AboutMe = () => {
       company: "Digiteaz",
       location: "Karachi, Pakistan",
       type: "Full Time",
-      date: "Sep 2021 - Dec 2021",
+      date: "Dec 2021 - July 2022",
+      expertise: [
+        "Redesigned and modernized multiple websites with the MERN stack to create intuitive and responsive user interfaces.",
+        "Improved frontend speed and interactivity by refactoring and optimizing the existing codebases.",
+        "Applied on-page SEO techniques to strengthen online visibility and elevate user acquisition organically.",
+        "Introduced animation libraries and UI frameworks such as Framer Motion, AOS, and Material-UI for an enhanced UI.",
+        "Managed backend improvements with Node.js including payment integration via Stripe and SMTP configuration using Mailtrap."
+      ]
     },
     {
-      role: "Service desk officer",
-      company: "Tabba Heart Hospital",
+      role: "Business Analyst",
+      company: "Tabba Heart Institution",
       location: "Karachi, Pakistan",
-      type: "Internship",
-      date: "Sep 2021 - Dec 2021",
+      type: "Full Time",
+      date: "May 2017 - Sep 2019",
+      expertise: [
+        "Collaborated with medical and administrative departments to elicit and document business requirements for the Oracle-based hospital ERP system, ensuring alignment between operational needs and technical solutions.",
+        "Analyzed user-reported issues and system bugs, prioritized them based on impact, and translated findings into structured tickets for the development team, facilitating faster resolution and improved system reliability.",
+        "Maintained comprehensive process documentation, including functional specifications, business requirement documents (BRDs), and workflow diagrams, to improve transparency and communication between technical and non-technical teams.",
+        "Conducted SQL queries on Oracle databases to validate data integrity, analyze reporting errors, and support decision-making with accurate information.",
+        "Assisted developers during system enhancement and testing phases, verifying functionality against requirements and coordinating feedback loops to refine product performance.",
+        "Led user acceptance testing (UAT) and end-user training sessions, preparing detailed test cases and ensuring seamless adoption of new modules across departments.",
+        "Partnered with IT and management to propose system improvements and process optimizations, directly contributing to enhanced operational efficiency and data-driven management at the hospital."
+      ]
     },
     {
-      role: "Software Developer Intern",
+      role: "Software Engineer Intern",
       company: "Dubai Islamic bank ",
       location: "Karachi, Pakistan",
       type: "Internship",
-      date: "Sep 2021 - Dec 2021",
+      date: "July 2015 - Aug 2015",
+      expertise: [
+        "Implemented banking ERP by developing forms using PLSQL and demonstrated proficiency in working with Oracle Database 9i.",
+      ]
     },
     {
-      role: "Software Developer Intern",
-      company: "Qasim International Container Terminal (QICT)",
+      role: "Software Engineer Intern",
+      company: "DP World - Qasim International Container Terminal (QICT)",
       location: "Karachi, Pakistan",
       type: "Internship",
-      date: "Sep 2021 - Dec 2021",
+      date: "July 2014 - Sep 2014",
+      expertise: [
+        "Provided technical support and network troubleshooting within the operations department, ensuring smooth connectivity and minimal downtime for business-critical systems",
+        "Logistics ERP by creating new forms and reports in Oracle using PLSQL, alongside expertise in Oracle Database 9i",
+
+      ]
     },
     {
-      role: "Software Developer Intern",
+      role: "Software Engineer Intern",
       company: "Excloud",
       location: "Karachi, Pakistan",
       type: "Internship",
-      date: "Sep 2021 - Dec 2021",
+      date: "Jan 2014 - Apr 2014",
+      expertise: [
+        "Developed diverse websites, including interactive restaurant platforms, engaging blogs, and robust Gas and Electricity service interfaces, using JavaScript and Bootstrap frameworks to showcase proficiency in web application development.",
+
+      ]
     },
   ];
 
   return (
     <section
-    id="about-me"
-    className="w-full  items-center min-h-screen  text-white py-20 px-4 sm:px-6 lg:px-8 relative bg-cover  bg-center bg-no-repeat md:bg-fixed"
-    style={{
-      backgroundImage: `url(${backgroundImage})`,
-      backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll'
-    }}
-  >
+      id="about-me"
+      className="w-full  items-center min-h-screen  text-white py-20 px-4 sm:px-6 lg:px-8 relative bg-cover  bg-center bg-no-repeat md:bg-fixed"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll'
+      }}
+    >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
 
@@ -104,10 +132,7 @@ const AboutMe = () => {
         {/* About Me Description */}
         <motion.div variants={fadeUp} className="space-y-6 mb-10">
           <p className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins font-Regular text-lightContent">
-            The Generator App is an online tool that helps you to export ready-made
-            templates ready to work as your future website. It helps you to combine
-            slides, panels and other components and export it as a set of static files:
-            HTML/CSS/JS.
+            Business Analyst and Software Engineer with a robust background in software development, combining analytical precision with deep technical understanding to enhance business performance. Experienced in gathering and analyzing requirements, documenting workflows, and validating data and APIs across the software lifecycle. Skilled in requirements elicitation, process documentation, SQL data validation, and API testing within Agile environments. Known for bridging communication between stakeholders such as product owners, developers, and QA teams to ensure functional alignment and system reliability. Passionate about transforming complex technical insights into practical business outcomes that improve efficiency and user satisfaction.
           </p>
         </motion.div>
 
@@ -116,30 +141,43 @@ const AboutMe = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-poppins font-Bold text-white mb-6">
             Work Experience
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-10">
             {experienceData.map((item, i) => (
-              <motion.div key={i} custom={i} variants={fadeUp}>
+              <motion.div key={i} custom={i} variants={fadeUp} className="pb-6 border-b border-gray-700/40">
                 <div className="flex flex-col md:flex-row md:justify-between">
-                  <div className="mb-2 md:mb-0">
-                    <h3 className="font-poppins text-sm sm:text-md md:text-lg lg:text-xl font-Regular text-white">
+                  <div>
+                    <h3 className="font-poppins text-md sm:text-lg md:text-xl font-Semibold text-white">
                       {item.role}
                     </h3>
-                    <p className="font-poppins text-xs md:text-sm xl:text-md font-Regular text-lightContent">
+                    <p className="font-poppins text-sm font-Regular text-lightContent">
                       {item.company} @ {item.location}
                     </p>
                   </div>
-                  <div className="flex flex-col md:items-end gap-1">
-                    <span className="font-poppins text-sm font-Semibold text-white bg-gray-700 bg-opacity-50 px-2 py-0.5 rounded-full w-fit">
+                  <div className="flex flex-col md:items-end gap-1 mt-2 md:mt-0">
+                    <span className="font-poppins text-xs md:text-sm font-Semibold text-white bg-gray-700/60 px-3 py-0.5 rounded-full w-fit">
                       {item.type}
                     </span>
-                    <span className="font-poppins text-sm font-Regular text-lightContent">
+                    <span className="font-poppins text-xs md:text-sm font-Regular text-lightContent">
                       {item.date}
                     </span>
                   </div>
                 </div>
-                {i !== experienceData.length - 1 && (
-                  <hr className="my-4 border-gray-400 border-opacity-30" />
-                )}
+
+                {/* Expertise List */}
+                {/* Expertise List */}
+                <ul className="list-disc list-inside border-l-2 border-gradient-to-b from-blue-400 to-purple-500 pl-4 mt-3 space-y-1 text-sm md:text-md text-white font-poppins">
+                  {item.expertise.map((point, idx) => (
+                    <motion.li
+                      key={idx}
+                      custom={idx}
+                      variants={fadeUp}
+                      className="leading-relaxed"
+                    >
+                      {point}
+                    </motion.li>
+                  ))}
+                </ul>
+
               </motion.div>
             ))}
           </div>

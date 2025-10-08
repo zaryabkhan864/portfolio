@@ -1,14 +1,18 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../images/newlogo.png';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <footer className="bg-neutral-900 text-white w-full px-4 pt-24 pb-10" aria-label="Footer">
       <div className="w-full max-w-7xl mx-auto">
 
         {/* Logo and Contact */}
-        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-col 2xl:flex-col 3xl:flex-col 4xl:flex-row  justify-between items-center mb-4 gap-4">
+        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-col 2xl:flex-col 3xl:flex-col 4xl:flex-row justify-between items-center mb-4 gap-4">
           <img
             src={logo}
             alt="MZK Logo"
@@ -52,20 +56,54 @@ const Footer = () => {
 
         {/* Navigation & Credit */}
         <div className="flex flex-col lg:flex-col 2xl:flex-row justify-between items-center gap-4">
-          <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-center font-DMSans text-xs md:text-md lg:text-md xl:text-md 2xl:text-lg font-Regular" aria-label="Footer Navigation">
-            <a href="/" className="glow-hover-text" aria-label="Home">Home</a>
-            <a href="/about" className="glow-hover-text" aria-label="About">About</a>
-            <a href="/tech-stack" className="glow-hover-text" aria-label="Technologies">Technologies</a>
-            <a href="/projects" className="glow-hover-text" aria-label="Projects">Projects</a>
-            <a href="/contact" className="glow-hover-text" aria-label="Contact">Contact</a>
+          <nav
+            className="flex flex-wrap justify-center gap-4 md:gap-6 text-center font-DMSans text-xs md:text-md lg:text-md xl:text-md 2xl:text-lg font-Regular"
+            aria-label="Footer Navigation"
+          >
+            <Link
+              to="/"
+              className={`glow-hover-text transition ${currentPath === '/' ? 'glow-text font-Bold' : ''}`}
+              aria-label="Home"
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className={`glow-hover-text transition ${currentPath === '/about' ? 'glow-text font-Bold' : ''}`}
+              aria-label="About"
+            >
+              About
+            </Link>
+            <Link
+              to="/tech-stack"
+              className={`glow-hover-text transition ${currentPath === '/tech-stack' ? 'glow-text font-Bold' : ''}`}
+              aria-label="Technologies"
+            >
+              Technologies
+            </Link>
+            <Link
+              to="/projects"
+              className={`glow-hover-text transition ${currentPath === '/projects' ? 'glow-text font-Bold' : ''}`}
+              aria-label="Projects"
+            >
+              Projects
+            </Link>
+            <Link
+              to="/contact"
+              className={`glow-hover-text transition ${currentPath === '/contact' ? 'glow-text font-Bold' : ''}`}
+              aria-label="Contact"
+            >
+              Contact
+            </Link>
           </nav>
+
           <div className="font-poppins text-xs md:text-md lg:text-md xl:text-md 2xl:text-lg font-Regular lg:text-right" aria-label="Footer Credit">
             Designed and built by
             <span className="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent px-1"> Muhammad Zayab Khan </span>
             With
             <span className="bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent px-1"> Love </span>
             &
-            <span className="bg-gradient-to-r from-pink-600 to-fuchsia-500 bg-clip-text text-transparent px-1"> Tea </span>
+            <span className="bg-gradient-to-r from-pink-600 to-fuchsia-500 bg-clip-text text-transparent px-1"> Code </span>
           </div>
         </div>
       </div>
