@@ -1,144 +1,79 @@
-import React, { useEffect, useState } from 'react'
-import { FaGithub, FaCode } from 'react-icons/fa';
-import P_BG from '../images/projects_background.png'
-import Banner_Image_Mobile from '../images/banner-mobile.png'
-import p1 from '../images/p1.jpg'
-import p2 from '../images/p2.png'
-import p3 from '../images/p3.png'
-import Slider from "react-slick";
+import React from 'react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import p1 from '../images/p1.webp';
+import p2 from '../images/p2.webp';
+import p3 from '../images/p3.webp';
+
+// Add a real URL to liveLink or codeLink and its button appears on the card.
 const projects = [
   {
-    title: "School Management System",
+    title: 'School Management System',
     description:
-      "SMS is developed on Oracle 9i. It includes modules for student registration, teacher’s registration, academic modules, finance modules, and reporting of student grades, attendance, and fees voucher.",
-    techStack: "HTML, JavaScript, SASS, React",
+      'Desktop system on Oracle 9i with student and teacher registration, academic and finance modules, and reports for grades, attendance and fee vouchers.',
+    techStack: 'Oracle Forms, PL/SQL, Oracle Reports',
     image: p1,
-    liveLink: "#",
-    codeLink: "#",
+    liveLink: '',
+    codeLink: '',
   },
   {
-    title: "SnipHub",
+    title: 'SnipHub',
     description:
-      "React-based NFT application with Landing Page, Login, NFT collections Pages, Target Price Page, Watchlist.",
-    techStack: "HTML, JavaScript, SASS, React",
+      'React NFT application with a landing page, login, NFT collection pages, target price alerts and a watchlist.',
+    techStack: 'React, JavaScript, SASS',
     image: p2,
-    liveLink: "#",
-    codeLink: "#",
+    liveLink: '',
+    codeLink: '',
   },
   {
-    title: "NFT Market",
+    title: 'NFT Market',
     description:
-      "NFT Market is a React-based landing page having mobile responsiveness, using Bootstrap 5.2.0, owlcarousel, react-countup, react-slick, react-dom, and AOS.",
-    techStack: "HTML, JavaScript, SASS, React",
+      'Responsive React landing page for an NFT marketplace, built with Bootstrap 5, carousels, count-up stats and scroll animations.',
+    techStack: 'React, Bootstrap 5, JavaScript',
     image: p3,
-    liveLink: "#",
-    codeLink: "#",
+    liveLink: '',
+    codeLink: '',
   },
 ];
 
-const sliderSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: false, // hide left/right buttons
-  autoplay: true, // auto slide
-  autoplaySpeed: 3000,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 768,
-      settings: { slidesToShow: 1 },
-    },
-  ],
-};
-
-const Projects = () => {
-  const [backgroundImage, setBackgroundImage] = useState(P_BG)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setBackgroundImage(Banner_Image_Mobile)
-      } else {
-        setBackgroundImage(P_BG)
-      }
-    }
-
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-  return (
-    <section
-      id="projects"
-      className="  text-white px-2 md:px-16 py-24 justify-center relative   bg-cover bg-center bg-no-repeat md:bg-fixed"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll'
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
-
-      <div className="relative z-10 py-16 px-2 md:px-10">
-        <div className="max-w-6xl mx-auto text-white text-center">
-          <h2         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2">Recent Projects</h2>
-          <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
-            Technologies I've been working with recently
-          </p>
-
-          <Slider {...sliderSettings} className="px-2">
-            {projects.map((project, index) => (
-              <div key={index} className="px-4">
-                <div className="bg-gray-900 rounded-2xl shadow-lg overflow-hidden border border-gray-700 hover:shadow-2xl transition-all duration-300 flex flex-col h-[540px]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-52 object-cover"
-                  />
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex-1">
-                      <h3 className="font-poppins font-medium text-md sm:text-lg md:text-xl lg:text-2xl  mb-2 text-left">{project.title}</h3>
-                      <p className="font-poppins text-xs sm:text-sm md:text-md lg:text-lg font-light mb-4 text-left line-clamp-4 ">
-                        {project.description}
-                      </p>
-                      <p className="text-sm font-medium text-gray-300 mb-4 text-left">
-                        <span className="text-white font-poppins text-sm font-light">Tech stack:</span> {project.techStack}
-                      </p>
-                    </div>
-                    <div className="flex justify-between font-poppins text-16px font-Regular items-center pt-4 border-t border-gray-700 mt-auto">
-                      <a
-                        href={project.liveLink}
-                        className="flex items-center gap-2 text-white text-xs hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaCode className="text-lg" />
-                        Live Preview
-                      </a>
-                      <a
-                        href={project.codeLink}
-                        className="flex items-center gap-2 text-white text-xs hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaGithub className="text-lg" />
-                        View Code
-                      </a>
-                    </div>
-                  </div>
+const Projects = () => (
+  <section id="projects" className="px-4 3xl:px-6 py-16 3xl:py-24">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Projects</h2>
+      <div className="mt-8 grid gap-6 3xl:grid-cols-2 5xl:grid-cols-3">
+        {projects.map((project) => (
+          <article key={project.title} className="flex flex-col rounded-xl border border-line bg-panel overflow-hidden">
+            <img
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              loading="lazy"
+              width="900"
+              height="600"
+              className="w-full aspect-[3/2] object-cover object-top border-b border-line"
+            />
+            <div className="flex flex-col flex-1 p-6">
+              <h3 className="text-lg font-bold text-text">{project.title}</h3>
+              <p className="mt-2 text-muted leading-relaxed flex-1">{project.description}</p>
+              <p className="mt-4 text-sm text-text/80">{project.techStack}</p>
+              {(project.liveLink || project.codeLink) && (
+                <div className="mt-4 pt-4 border-t border-line flex gap-5 text-sm font-semibold">
+                  {project.liveLink && (
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent hover:underline">
+                      <FaExternalLinkAlt size={12} aria-hidden="true" /> Live site
+                    </a>
+                  )}
+                  {project.codeLink && (
+                    <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent hover:underline">
+                      <FaGithub size={14} aria-hidden="true" /> Code
+                    </a>
+                  )}
                 </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Projects;

@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/AboutScreen';
@@ -11,15 +7,18 @@ import TechStackScreen from './screens/TechStackScreen';
 import ProjectScreen from './screens/ProjectScreen';
 import ContactScreen from './screens/ContactScreen';
 
-function App() {
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false, // 🔥 this allows animation to trigger every time element enters viewport
-    });
-  }, []);
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/about" element={<AboutScreen />} />

@@ -1,18 +1,18 @@
-import React from 'react'
-import Tech from '../components/Tech'
-import Navbar from '../components/Navbar'
-import Banner from '../components/Banner'
-import Footer from '../components/Footer'
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Banner from '../components/Banner';
+import Tech from '../components/Tech';
+import Footer from '../components/Footer';
 
-const TechStackScreen = () => {
-    return (
-        <React.Fragment>
-            <Navbar />
-            <Banner />
-            <Tech />
-            <Footer />
-        </React.Fragment>
-    )
-}
+const TechStackScreen = () => (
+  <>
+    <Navbar />
+    <main>
+      <Banner title="Skills" />
+      <Tech />
+    </main>
+    <Footer />
+  </>
+);
 
-export default TechStackScreen
+export default TechStackScreen;

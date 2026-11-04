@@ -1,69 +1,44 @@
-import React from "react";
-import img1 from "../images/1.svg";
-import img2 from "../images/2.svg";
-import img3 from "../images/3.svg";
-import img4 from "../images/4.svg";
-import img5 from "../images/5.svg";
-import img6 from "../images/6.svg";
-import img7 from "../images/7.svg";
-import img8 from "../images/8.svg";
+import React from 'react';
 
-const techStack = [
-  { src: img1, alt: "HTML5 Logo" },
-  { src: img2, alt: "CSS3 Logo" },
-  { src: img3, alt: "JavaScript Logo" },
-  { src: img4, alt: "React Logo" },
-  { src: img5, alt: "Redux Logo" },
-  { src: img6, alt: "Bootstrap Logo" },
-  { src: img7, alt: "GitHub Logo" },
-  { src: img8, alt: "VSCode Logo" },
+const groups = [
+  {
+    name: 'Testing',
+    items: ['Test case design', 'Functional testing', 'Regression testing', 'User acceptance testing', 'Requirements traceability', 'Defect tracking'],
+  },
+  {
+    name: 'Back-end and data',
+    items: ['REST API testing (Postman)', 'SQL', 'Oracle', 'MySQL', 'MongoDB', 'PL/SQL'],
+  },
+  {
+    name: 'Development',
+    items: ['JavaScript', 'TypeScript', 'React.js', 'Redux', 'Node.js', 'Express.js', 'Python', 'Tailwind CSS'],
+  },
+  {
+    name: 'Tools and ways of working',
+    items: ['Jira', 'Confluence', 'Git and GitHub', 'Bitbucket', 'Figma', 'Agile (Scrum, Kanban)'],
+  },
 ];
 
-const Tech = () => {
-  return (
-    <section
-      id="tech-stack"
-      className="bg-neutral-900 text-white py-16 px-4 sm:px-6 lg:px-8"
-
-    >
-      <div className="max-w-5xl mx-auto text-center"      
-       aria-labelledby="tech-stack-heading"
-      data-aos="fade-up">
-        <h2
-          id="tech-stack-heading"
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-Bold text-solidHeadingDark mb-2"
-        >
-          My Tech Stack
-        </h2>
-        <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-poppins font-Regular text-lightContent mb-12">
-          Technologies I’ve been working with recently
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-6">
-          {techStack.map((tech, index) => (
-            <div
-              key={index}
-              className="w-1/4 sm:w-1/5 md:w-1/6 flex items-center justify-center"
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
-            >
-              <img
-                src={tech.src}
-                alt={tech.alt}
-                className="
-                w-14  h-14
-                sm:w-16 sm:h-16
-                md:w-20 md:h-20 
-                lg:w-24 lg:h-24
-                object-contain"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const Tech = () => (
+  <section id="tech-stack" className="px-4 3xl:px-6 py-16 3xl:py-24 bg-panel/40 border-y border-line">
+    <div className="max-w-6xl mx-auto grid gap-6 5xl:grid-cols-[16rem_1fr]">
+      <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Skills</h2>
+      <dl>
+        {groups.map((group) => (
+          <div key={group.name} className="grid gap-2 3xl:grid-cols-[11rem_1fr] 3xl:gap-8 py-5 border-t border-line first:border-t-0 first:pt-0">
+            <dt className="font-bold text-text">{group.name}</dt>
+            <dd className="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <span key={item} className="px-3 py-1 rounded-md bg-ink border border-line text-sm text-text/90">
+                  {item}
+                </span>
+              ))}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+);
 
 export default Tech;

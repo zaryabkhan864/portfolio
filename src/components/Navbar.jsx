@@ -1,167 +1,85 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../images/newlogo.png';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom';
+import logo from '../images/logo-mzk.webp';
 
 const navLinks = [
-  { name: 'Home', href: '/', id: 'home' },
-  { name: 'About', href: '/about', id: 'about' },
-  { name: 'Tech Stack', href: '/tech-stack', id: 'techstack' },
-  { name: 'Projects', href: '/projects', id: 'projects' },
-  { name: 'Contact', href: '/contact', id: 'contact' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Skills', href: '/tech-stack' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Contact', href: '/contact' },
 ];
+
+const linkClass = ({ isActive }) =>
+  `px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
+    isActive ? 'text-accent' : 'text-muted hover:text-text'
+  }`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const location = useLocation();
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
-
-  useEffect(() => {
-    const path = location.pathname;
-
-    if (path === '/') {
-      const handleScroll = () => {
-        const scrollPos = window.scrollY;
-
-        if (scrollPos < 100) {
-          setActiveSection('home');
-          return;
-        }
-
-        const sectionIds = navLinks
-          .map((link) => link.id)
-          .filter((id) => document.getElementById(id));
-
-        for (let i = sectionIds.length - 1; i >= 0; i--) {
-          const section = document.getElementById(sectionIds[i]);
-          if (section && section.offsetTop <= scrollPos + 50) {
-            setActiveSection(sectionIds[i]);
-            break;
-          }
-        }
-      };
-
-      window.addEventListener('scroll', handleScroll);
-      handleScroll();
-
-      return () => window.removeEventListener('scroll', handleScroll);
-    } else {
-      const match = navLinks.find(link => link.href === path);
-      setActiveSection(match?.id || '');
-
-    }
-  }, [location]);
 
   return (
-    <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-4 xl:px-12 
-        bg-transparent text-white transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'
-          }`}
-      >
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img
-            src={logo}
-            alt="MZK Logo"
-            className="w-16 xs:w-20  lg:w-24 h-auto object-contain"
-          />
-        </div>
+    <header className="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur border-b border-line">
+      <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 3xl:px-6 h-16" aria-label="Main">
+        <NavLink to="/" className="flex items-center gap-3" aria-label="Home">
+          <img src={logo} alt="" width="40" height="40" className="w-10 h-10" />
+          <span className="font-bold text-text">Zaryab Khan</span>
+        </NavLink>
 
-        {/* Desktop Menu */}
-        <div className="hidden 2xl:flex items-center space-x-4 md:space-x-5 lg:space-x-6 2xl:space-x-5 3xl:space-x-6  font-DMSans font-medium text-base 2xl:text-xs 3xl:text-base">
+        <div className="hidden 3xl:flex items-center gap-1">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              style={activeSection === link.id ? { textShadow: '0 0 5px #9294F8, 0 0 10px #9294F8' } : {}}
-              className={`transition glow-hover-text ${activeSection === link.id ? 'text-blue-950 font-bold' : ''}`}
-
-            >
+            <NavLink key={link.href} to={link.href} end={link.href === '/'} className={linkClass}>
               {link.name}
-            </Link>
+            </NavLink>
           ))}
-
-          {/* Social Icons */}
-          <div className="flex space-x-4 ml-6">
-            <a
-              href="https://github.com/zaryabkhan864"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glow-hover p-1 rounded"
-            >
-              <FaGithub size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/khanzaryab/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glow-hover p-1 rounded"
-            >
-              <FaLinkedin size={20} />
-            </a>
-          </div>
+          <span className="w-px h-5 bg-line mx-3" aria-hidden="true" />
+          <a href="https://github.com/zaryabkhan864" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 text-muted hover:text-text">
+            <FaGithub size={18} />
+          </a>
+          <a href="https://www.linkedin.com/in/khanzaryab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-muted hover:text-text">
+            <FaLinkedin size={18} />
+          </a>
         </div>
 
-        {/* Hamburger Button */}
-        <div className="2xl:hidden">
-          <button onClick={() => setIsOpen(true)} aria-label="Open menu">
-            <FaBars size={24} />
-          </button>
-        </div>
+        <button
+          className="3xl:hidden p-2 text-text"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isOpen}
+        >
+          {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
       </nav>
 
-      {/* Full Screen Mobile Drawer */}
-      <div
-        className={`fixed top-0 left-0 w-full h-screen bg-black bg-opacity-95 backdrop-blur-md z-50 text-white transition-transform duration-300 2xl:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-      >
-        <div className="flex justify-end p-6">
-          <button onClick={() => setIsOpen(false)} aria-label="Close menu">
-            <FaTimes size={28} />
-          </button>
-        </div>
-
-        <div className="flex flex-col items-center justify-center h-[80%] space-y-6 text-lg font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              onClick={() => setIsOpen(false)}
-              className="glow-hover-text transition"
-            >
-              {link.name}
-            </Link>
-          ))}
-
-          <div className="flex space-x-6 pt-6">
-            <a href="https://github.com/zaryabkhan864" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
+      {isOpen && (
+        <div className="3xl:hidden border-t border-line bg-ink px-4 pb-4">
+          <div className="flex flex-col pt-2">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.href}
+                to={link.href}
+                end={link.href === '/'}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `py-3 border-b border-line text-base font-semibold ${isActive ? 'text-accent' : 'text-text'}`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
+          </div>
+          <div className="flex gap-4 pt-4">
+            <a href="https://github.com/zaryabkhan864" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted hover:text-text">
               <FaGithub size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/khanzaryab/" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
+            <a href="https://www.linkedin.com/in/khanzaryab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted hover:text-text">
               <FaLinkedin size={20} />
             </a>
           </div>
         </div>
-      </div>
-    </>
+      )}
+    </header>
   );
 };
 

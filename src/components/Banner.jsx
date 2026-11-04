@@ -1,101 +1,98 @@
-import React, { useEffect, useState } from 'react'
-import Profile_Image from '../images/profile_image.png'
-import Banner_Image from '../images/banner.png'
-import Banner_Image_Mobile from '../images/banner-mobile.png'
-import { TypeAnimation } from 'react-type-animation'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaCheck } from 'react-icons/fa';
+import profile from '../images/profile.webp';
 
-const Banner = () => {
-  const [backgroundImage, setBackgroundImage] = useState(Banner_Image)
+const checks = [
+  'Requirements reviewed for gaps',
+  'Test cases traced to each requirement',
+  'Regression suite run',
+  'APIs checked in Postman',
+  'Data validated with SQL',
+  'Defects fixed and re-verified',
+];
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setBackgroundImage(Banner_Image_Mobile)
-      } else {
-        setBackgroundImage(Banner_Image)
-      }
-    }
-
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+const Banner = ({ title }) => {
+  if (title) {
+    return (
+      <section className="pt-28 pb-10 px-4 3xl:px-6 border-b border-line">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-muted font-semibold">Zaryab Khan</p>
+          <h1 className="mt-1 text-3xl 3xl:text-4xl font-extrabold tracking-tight text-text">{title}</h1>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <section
-      id="home"
-      className="min-h-screen w-full text-white px-6 sm:px-9 md:px-10 lg:px-11 xl:px-16 2xl:px-16 3xl:px-16 4xl:px-16 flex items-center justify-center relative bg-cover bg-center bg-no-repeat md:bg-fixed"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundAttachment: window.innerWidth >= 768 ? 'fixed' : 'scroll'
-      }}
-    >
-      <div className="w-full max-w-6xl flex flex-col xs:flex-row sm:flex-row md:flex-row items-center justify-between z-10 py-16">
-        {/* Text + Typing Animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="w-full md:w-1/2 lg:w-2/3 space-y-3 md:space-y-4  text-center xs:text-left"
-        >
-          <h1 className="text-md xs:text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-poppins font-semibold">Hi 👋</h1>
-          <h2 className="text-md xs:text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-poppins font-semibold">My name is</h2>
-          <h3 className="text-md xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-3xl font-poppins font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-500">
-            M Zaryab Khan
-          </h3>
-          <p className="text-base xs:text-md sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-poppins font-semibold ">
-            <TypeAnimation
-              sequence={[
-                'QA Engineer & Software Developer',
-                1200,
-                'I design test cases and catch bugs early',
-                1200,
-                'I test APIs with Postman and SQL',
-                1200,
-                'I build web apps with React and Node.js',
-                1200,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              style={{ display: 'inline-block' }}
+    <section id="home" className="pt-28 pb-16 3xl:pt-36 3xl:pb-24 px-4 3xl:px-6 border-b border-line">
+      <div className="max-w-6xl mx-auto grid gap-12 5xl:grid-cols-[1.25fr_1fr] items-center">
+        <div>
+          <div className="flex items-center gap-4">
+            <img
+              src={profile}
+              alt="Muhammad Zaryab Khan"
+              width="64"
+              height="64"
+              className="w-16 h-16 rounded-full object-cover border border-line"
             />
-          </p>
-          <a
-            href="/Muhammad_Zaryab_Khan_CV.pdf"
-            download
-            className="inline-block mt-4 px-6 py-2 rounded-full font-poppins font-semibold text-sm sm:text-base bg-gradient-to-r from-pink-600 to-fuchsia-500 hover:opacity-90 transition"
-          >
-            Download CV
-          </a>
-        </motion.div>
+            <div>
+              <p className="font-bold text-text">Muhammad Zaryab Khan</p>
+              <p className="text-sm text-muted">Istanbul, Turkey</p>
+            </div>
+          </div>
 
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative mt-10 md:mt-0"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(146, 148, 248, 1) 0%, rgba(146, 148, 248, 0.9) 20%, rgba(146, 148, 248, 0.7) 40%, rgba(146, 148, 248, 0.4) 60%, rgba(146, 148, 248, 0.3) 80%, rgba(146, 148, 248, 0.2) 90%, rgba(146, 148, 248, 0) 100%)',
-            borderRadius: '50%',
-            width: 'fit-content',
-            height: 'fit-content',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
-          <img
-            src={Profile_Image}
-            alt="M Zaryab Khan"
-            className="w-32 h-32 xs:w-56 xs:h-32 sm:w-64 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-40 xl:w-36 xl:h-36 2xl:w-56 2xl:h-52 3xl:w-52 3xl:h-52 rounded-full shadow-lg object-cover"
-          />
-        </motion.div>
+          <h1 className="mt-8 text-4xl 3xl:text-5xl 6xl:text-6xl font-extrabold tracking-tight leading-[1.05] text-text max-w-[16ch]">
+            QA engineer and software developer
+          </h1>
+          <p className="mt-6 text-lg text-muted max-w-[52ch] leading-relaxed">
+            I turn requirements into test cases, catch defects before they reach users, and build web
+            apps with Node.js and React.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="/Muhammad_Zaryab_Khan_CV.pdf"
+              download
+              className="inline-flex items-center px-5 py-3 rounded-lg bg-accent text-ink font-bold hover:bg-[#86B0FA] transition-colors"
+            >
+              Download CV
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-5 py-3 rounded-lg border border-line text-text font-bold hover:border-accent transition-colors"
+            >
+              Get in touch
+            </Link>
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-line bg-panel p-6 3xl:p-8" aria-label="Release checklist">
+          <p className="font-bold text-text">Before every release</p>
+          <ul className="mt-5 space-y-3">
+            {checks.map((item, i) => (
+              <li
+                key={item}
+                className="check-row flex items-start gap-3 text-text"
+                style={{ animationDelay: `${0.3 + i * 0.25}s` }}
+              >
+                <span className="mt-0.5 flex-none w-5 h-5 rounded-full bg-pass/15 text-pass flex items-center justify-center">
+                  <FaCheck size={10} aria-hidden="true" />
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p
+            className="check-row mt-6 pt-4 border-t border-line text-sm font-semibold text-pass"
+            style={{ animationDelay: `${0.3 + checks.length * 0.25}s` }}
+          >
+            {checks.length} of {checks.length} passed
+          </p>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-
-export default Banner
+export default Banner;

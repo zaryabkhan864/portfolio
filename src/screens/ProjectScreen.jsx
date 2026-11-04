@@ -1,18 +1,18 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Banner from '../components/Banner'
-import Projects from '../components/Projects'
-import Footer from '../components/Footer'
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Banner from '../components/Banner';
+import Projects from '../components/Projects';
+import Footer from '../components/Footer';
 
-const ProjectScreen = () => {
-  return (
-    <React.Fragment>
+const ProjectScreen = () => (
+  <>
     <Navbar />
-    <Banner />
-    <Projects />
+    <main>
+      <Banner title="Projects" />
+      <Projects />
+    </main>
     <Footer />
-</React.Fragment>
-  )
-}
+  </>
+);
 
-export default ProjectScreen
+export default ProjectScreen;

@@ -37,8 +37,16 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
         DMSans: ['DM Sans', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        manrope: ['Manrope', 'system-ui', 'sans-serif'],
       },
       colors: {
+        ink: "#0E1726",
+        panel: "#15223A",
+        line: "#24344D",
+        text: "#E7EDF5",
+        muted: "#93A3B8",
+        accent: "#6C9EF8",
+        pass: "#3FC58E",
         royalBlue: "#4169e1",
         solidHeadingDark: "#CCCCCC",
         lightContent: "#A7A7A7"
@@ -64,7 +72,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
     plugin(function ({ addComponents }) {
       addComponents({
         // 🌟 Icon glow

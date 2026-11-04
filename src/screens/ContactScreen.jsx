@@ -1,18 +1,18 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Banner from '../components/Banner'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Banner from '../components/Banner';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
-const ContactScreen = () => {
-  return (
-    <React.Fragment>
+const ContactScreen = () => (
+  <>
     <Navbar />
-    <Banner />
-    <Contact />
+    <main>
+      <Banner title="Contact" />
+      <Contact />
+    </main>
     <Footer />
-</React.Fragment>
-  )
-}
+  </>
+);
 
-export default ContactScreen
+export default ContactScreen;

@@ -2,11 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-ink text-text font-manrope antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid #6C9EF8;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
 
-@import "aos/dist/aos.css";
-body{
-    background-color: #171718;
+@keyframes check-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.check-row {
+  opacity: 0;
+  animation: check-in 0.35s ease-out forwards;
+}
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .check-row { animation: none; opacity: 1; }
 }
