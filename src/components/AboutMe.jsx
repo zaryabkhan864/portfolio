@@ -1,3 +1,4 @@
+import Reveal from './Reveal';
 import React from 'react';
 
 const experienceData = [
@@ -97,7 +98,7 @@ const education = [
 ];
 
 const Entry = ({ date, type, title, place, children }) => (
-  <li className="grid gap-2 3xl:grid-cols-[11rem_1fr] 3xl:gap-8 py-8 border-t border-line first:border-t-0">
+  <Reveal as="li" className="grid gap-2 3xl:grid-cols-[11rem_1fr] 3xl:gap-8 py-8 border-t border-line first:border-t-0">
     <div className="text-sm text-muted">
       <p className="font-semibold text-text/80">{date}</p>
       {type && <p className="mt-1">{type}</p>}
@@ -107,18 +108,18 @@ const Entry = ({ date, type, title, place, children }) => (
       <p className="text-muted">{place}</p>
       {children}
     </div>
-  </li>
+  </Reveal>
 );
 
 const AboutMe = () => (
   <section id="about-me" className="px-4 3xl:px-6 py-16 3xl:py-24">
     <div className="max-w-6xl mx-auto">
-      <div className="grid gap-6 5xl:grid-cols-[16rem_1fr]">
+      <Reveal className="grid gap-6 5xl:grid-cols-[16rem_1fr]">
         <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">About me</h2>
         <p className="text-lg leading-relaxed text-muted max-w-[68ch]">
           QA-focused software engineer with an MSc in Computer Engineering. I review specifications, design and execute functional and regression test cases traced to requirements, and manage defects from report through investigation to verified fix. Hands-on with user acceptance testing on an Oracle-based hospital ERP, REST API testing with Postman and SQL data validation, plus web development with Node.js, React.js and MongoDB. I enjoy finding issues early, working closely with developers and stakeholders, and I am growing my skills in test automation and CI/CD.
         </p>
-      </div>
+      </Reveal>
 
       <div className="mt-16 grid gap-6 5xl:grid-cols-[16rem_1fr]">
         <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Experience</h2>

@@ -1,3 +1,4 @@
+import Reveal from './Reveal';
 import React from 'react';
 import cc1 from '../images/cc1.webp';
 import cc2 from '../images/cc2.webp';
@@ -14,18 +15,19 @@ const certificates = [
 const Certificates = () => (
   <section id="certificates" className="px-4 3xl:px-6 py-16 3xl:py-24 bg-panel/40 border-y border-line">
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Certificates</h2>
+      <Reveal as="h2" className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Certificates</Reveal>
       <div className="mt-8 grid gap-4 grid-cols-1 xl:grid-cols-2 5xl:grid-cols-4">
-        {certificates.map((cert) => (
+        {certificates.map((cert, i) => (
+          <Reveal key={cert.src} delay={i * 100}>
           <a
-            key={cert.src}
             href={cert.src}
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-lg overflow-hidden border border-line bg-white hover:border-accent transition-colors"
+            className="block rounded-lg overflow-hidden border border-line bg-white hover:border-accent hover:-translate-y-1 transition"
           >
             <img src={cert.src} alt={cert.alt} loading="lazy" className="w-full aspect-[4/3] object-contain" />
           </a>
+          </Reveal>
         ))}
       </div>
     </div>

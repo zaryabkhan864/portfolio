@@ -1,3 +1,4 @@
+import Reveal from './Reveal';
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FaEnvelope, FaPhone, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
@@ -33,7 +34,7 @@ const Contact = () => {
   return (
     <section id="contact" className="px-4 3xl:px-6 py-16 3xl:py-24">
       <div className="max-w-6xl mx-auto grid gap-10 5xl:grid-cols-2">
-        <div>
+        <Reveal>
           <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Contact</h2>
           <p className="mt-4 text-lg text-muted max-w-[46ch] leading-relaxed">
             Hiring for a QA or developer role, or need help with a project? Send me a message and I will
@@ -64,8 +65,9 @@ const Contact = () => {
           >
             Download CV
           </a>
-        </div>
+        </Reveal>
 
+        <Reveal delay={120}>
         <form ref={form} onSubmit={sendEmail} className="rounded-xl border border-line bg-panel p-6 3xl:p-8 space-y-5">
           <div>
             <label htmlFor="name" className="block mb-2 font-semibold text-text">Name</label>
@@ -95,6 +97,7 @@ const Contact = () => {
             )}
           </p>
         </form>
+        </Reveal>
       </div>
     </section>
   );

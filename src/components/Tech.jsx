@@ -1,3 +1,4 @@
+import Reveal from './Reveal';
 import React from 'react';
 
 const groups = [
@@ -24,8 +25,8 @@ const Tech = () => (
     <div className="max-w-6xl mx-auto grid gap-6 5xl:grid-cols-[16rem_1fr]">
       <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Skills</h2>
       <dl>
-        {groups.map((group) => (
-          <div key={group.name} className="grid gap-2 3xl:grid-cols-[11rem_1fr] 3xl:gap-8 py-5 border-t border-line first:border-t-0 first:pt-0">
+        {groups.map((group, i) => (
+          <Reveal key={group.name} delay={i * 90} className="grid gap-2 3xl:grid-cols-[11rem_1fr] 3xl:gap-8 py-5 border-t border-line first:border-t-0 first:pt-0">
             <dt className="font-bold text-text">{group.name}</dt>
             <dd className="flex flex-wrap gap-2">
               {group.items.map((item) => (
@@ -34,7 +35,7 @@ const Tech = () => (
                 </span>
               ))}
             </dd>
-          </div>
+          </Reveal>
         ))}
       </dl>
     </div>

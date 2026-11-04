@@ -1,3 +1,4 @@
+import Reveal from './Reveal';
 import React from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import edusync from '../images/edusync.webp';
@@ -38,18 +39,21 @@ const projects = [
 const Projects = () => (
   <section id="projects" className="px-4 3xl:px-6 py-16 3xl:py-24">
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Projects</h2>
+      <Reveal as="h2" className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Projects</Reveal>
       <div className="mt-8 grid gap-6 3xl:grid-cols-2 5xl:grid-cols-3">
-        {projects.map((project) => (
-          <article key={project.title} className="flex flex-col rounded-xl border border-line bg-panel overflow-hidden">
+        {projects.map((project, i) => (
+          <Reveal key={project.title} delay={i * 120} className="h-full">
+          <article className="group h-full flex flex-col rounded-xl border border-line bg-panel overflow-hidden hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_18px_50px_-24px_rgba(108,158,248,0.5)] transition duration-300">
+            <div className="overflow-hidden border-b border-line">
             <img
               src={project.image}
               alt={`${project.title} screenshot`}
               loading="lazy"
               width="900"
               height="600"
-              className="w-full aspect-[3/2] object-cover object-top border-b border-line"
+              className="w-full aspect-[3/2] object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
             />
+            </div>
             <div className="flex flex-col flex-1 p-6">
               <h3 className="text-lg font-bold text-text">{project.title}</h3>
               <p className="mt-2 text-muted leading-relaxed flex-1">{project.description}</p>
@@ -70,6 +74,7 @@ const Projects = () => (
               )}
             </div>
           </article>
+          </Reveal>
         ))}
       </div>
     </div>
