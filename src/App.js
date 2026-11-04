@@ -3,12 +3,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./screens/HomeScreen";
-import About from "./screens/AboutScreen";
 
 
-import TechStack from './screens/TechStackScreen';
-import Project from './screens/ProjectScreen';
 import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/AboutScreen';
 import TechStackScreen from './screens/TechStackScreen';

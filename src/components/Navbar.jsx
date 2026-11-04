@@ -3,6 +3,14 @@ import logo from '../images/newlogo.png';
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
+const navLinks = [
+  { name: 'Home', href: '/', id: 'home' },
+  { name: 'About', href: '/about', id: 'about' },
+  { name: 'Tech Stack', href: '/tech-stack', id: 'techstack' },
+  { name: 'Projects', href: '/projects', id: 'projects' },
+  { name: 'Contact', href: '/contact', id: 'contact' },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -10,13 +18,6 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
-  const navLinks = [
-    { name: 'Home', href: '/', id: 'home' },
-    { name: 'About', href: '/about', id: 'about' },
-    { name: 'Tech Stack', href: '/tech-stack', id: 'techstack' },
-    { name: 'Projects', href: '/projects', id: 'projects' },
-    { name: 'Contact', href: '/contact', id: 'contact' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {

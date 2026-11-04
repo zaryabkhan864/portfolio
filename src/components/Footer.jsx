@@ -99,7 +99,7 @@ const Footer = () => {
 
           <div className="font-poppins text-xs md:text-md lg:text-md xl:text-md 2xl:text-lg font-Regular lg:text-right" aria-label="Footer Credit">
             Designed and built by
-            <span className="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent px-1"> Muhammad Zayab Khan </span>
+            <span className="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent px-1"> Muhammad Zaryab Khan </span>
             With
             <span className="bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent px-1"> Love </span>
             &
