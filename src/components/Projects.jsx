@@ -1,18 +1,18 @@
 import React from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import p1 from '../images/p1.webp';
+import edusync from '../images/edusync.webp';
 import p2 from '../images/p2.webp';
 import p3 from '../images/p3.webp';
 
 // Add a real URL to liveLink or codeLink and its button appears on the card.
 const projects = [
   {
-    title: 'School Management System',
+    title: 'EduSync Pro school management system',
     description:
-      'Desktop system on Oracle 9i with student and teacher registration, academic and finance modules, and reports for grades, attendance and fee vouchers.',
-    techStack: 'Oracle Forms, PL/SQL, Oracle Reports',
-    image: p1,
-    liveLink: '',
+      'Full-stack school platform, live as a demo for schools in Turkey and Pakistan. Role-based portals for admins, principals, teachers and students, with period-wise attendance and reports, timetables with clash checks, homework submissions, fees with instalments and printable receipts, salaries and expenses.',
+    techStack: 'MongoDB, Express.js, React, Redux Toolkit, Node.js, Tailwind CSS, Cloudinary',
+    image: edusync,
+    liveLink: 'https://gokkusagi-school.onrender.com',
     codeLink: '',
   },
   {
@@ -58,7 +58,7 @@ const Projects = () => (
                 <div className="mt-4 pt-4 border-t border-line flex gap-5 text-sm font-semibold">
                   {project.liveLink && (
                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent hover:underline">
-                      <FaExternalLinkAlt size={12} aria-hidden="true" /> Live site
+                      <FaExternalLinkAlt size={12} aria-hidden="true" /> Live demo
                     </a>
                   )}
                   {project.codeLink && (
