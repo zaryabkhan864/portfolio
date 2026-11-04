@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../images/newlogo.png';
-import { FaBars, FaTimes, FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -109,14 +109,6 @@ const Navbar = () => {
               <FaGithub size={20} />
             </a>
             <a
-              href="https://twitter.com/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glow-hover p-1 rounded"
-            >
-              <FaTwitter size={20} />
-            </a>
-            <a
               href="https://www.linkedin.com/in/khanzaryab/"
               target="_blank"
               rel="noopener noreferrer"
@@ -161,9 +153,6 @@ const Navbar = () => {
           <div className="flex space-x-6 pt-6">
             <a href="https://github.com/zaryabkhan864" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaGithub size={20} />
-            </a>
-            <a href="https://twitter.com/your-username" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
-              <FaTwitter size={20} />
             </a>
             <a href="https://www.linkedin.com/in/khanzaryab/" target="_blank" rel="noreferrer" className="glow-hover p-1 rounded">
               <FaLinkedin size={20} />

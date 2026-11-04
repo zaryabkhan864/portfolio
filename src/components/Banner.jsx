@@ -47,12 +47,14 @@ const Banner = () => {
           <p className="text-base xs:text-md sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-poppins font-semibold ">
             <TypeAnimation
               sequence={[
-                'I build things for the web',
-                1000,
-                'I design and develop user interfaces',
-                1000,
-                'I love React and Tailwind CSS',
-                1000,
+                'QA Engineer & Software Developer',
+                1200,
+                'I design test cases and catch bugs early',
+                1200,
+                'I test APIs with Postman and SQL',
+                1200,
+                'I build web apps with React and Node.js',
+                1200,
               ]}
               wrapper="span"
               speed={50}
@@ -60,6 +62,13 @@ const Banner = () => {
               style={{ display: 'inline-block' }}
             />
           </p>
+          <a
+            href="/Muhammad_Zaryab_Khan_CV.pdf"
+            download
+            className="inline-block mt-4 px-6 py-2 rounded-full font-poppins font-semibold text-sm sm:text-base bg-gradient-to-r from-pink-600 to-fuchsia-500 hover:opacity-90 transition"
+          >
+            Download CV
+          </a>
         </motion.div>
 
         {/* Profile Image */}

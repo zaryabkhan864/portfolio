@@ -36,43 +36,63 @@ const AboutMe = () => {
 
   const experienceData = [
     {
+      role: "IT Support Engineer and IT Teacher",
+      company: "Gokkusagi International School",
+      location: "Istanbul, Turkey",
+      type: "Full Time",
+      date: "Jan 2023 - Present",
+      expertise: [
+        "Diagnose and resolve technical issues across PCs, smart boards, printers, servers and the school network.",
+        "Support system upgrades and security measures to keep services reliable for all departments.",
+        "Teach IT in English and lead hands-on Arduino and IoT projects."
+      ]
+    },
+    {
+      role: "Freelance Software Developer",
+      company: "Freelance",
+      location: "Remote",
+      type: "Part Time",
+      date: "Jan 2023 - Present",
+      expertise: [
+        "Build and test web applications for clients with Node.js, Express, MongoDB and React.js; test REST APIs with Postman before delivery.",
+        "Agree requirements and acceptance criteria with clients and verify features against them."
+      ]
+    },
+    {
       role: "Software Engineer",
       company: "Digiteaz",
       location: "Karachi, Pakistan",
       type: "Full Time",
       date: "Dec 2021 - July 2022",
       expertise: [
-        "Redesigned and modernized multiple websites with the MERN stack to create intuitive and responsive user interfaces.",
-        "Improved frontend speed and interactivity by refactoring and optimizing the existing codebases.",
-        "Applied on-page SEO techniques to strengthen online visibility and elevate user acquisition organically.",
-        "Introduced animation libraries and UI frameworks such as Framer Motion, AOS, and Material-UI for an enhanced UI.",
-        "Managed backend improvements with Node.js including payment integration via Stripe and SMTP configuration using Mailtrap."
+        "Fixed bugs across platform features and refactored React components from class-based to function-based with hooks.",
+        "Built Node.js back-end features, including Stripe payment integration and SMTP email configuration.",
+        "Improved frontend speed and interactivity by refactoring and optimizing existing MERN codebases.",
+        "Documented feature workflows in Confluence to speed up onboarding for new developers."
       ]
     },
     {
-      role: "Business Analyst",
-      company: "Tabba Heart Institution",
+      role: "Service Desk Officer (ERP Business Analysis and UAT)",
+      company: "Tabba Heart Institute",
       location: "Karachi, Pakistan",
       type: "Full Time",
-      date: "May 2017 - Sep 2019",
+      date: "Sep 2017 - Dec 2020",
       expertise: [
-        "Collaborated with medical and administrative departments to elicit and document business requirements for the Oracle-based hospital ERP system, ensuring alignment between operational needs and technical solutions.",
-        "Analyzed user-reported issues and system bugs, prioritized them based on impact, and translated findings into structured tickets for the development team, facilitating faster resolution and improved system reliability.",
-        "Maintained comprehensive process documentation, including functional specifications, business requirement documents (BRDs), and workflow diagrams, to improve transparency and communication between technical and non-technical teams.",
-        "Conducted SQL queries on Oracle databases to validate data integrity, analyze reporting errors, and support decision-making with accurate information.",
-        "Assisted developers during system enhancement and testing phases, verifying functionality against requirements and coordinating feedback loops to refine product performance.",
-        "Led user acceptance testing (UAT) and end-user training sessions, preparing detailed test cases and ensuring seamless adoption of new modules across departments.",
-        "Partnered with IT and management to propose system improvements and process optimizations, directly contributing to enhanced operational efficiency and data-driven management at the hospital."
+        "Reviewed specifications for new modules of HOPE, the Oracle-based hospital ERP licensed from Shaukat Khanum Memorial Cancer Hospital, flagging gaps and risks before release.",
+        "Designed and executed user acceptance test cases traced to requirements, and confirmed modules were ready before rollout.",
+        "Reproduced and investigated user-reported defects, logged them as structured tickets for the vendor development team and verified the fixes.",
+        "Validated back-end data integrity and traced reporting errors with SQL queries on Oracle databases.",
+        "Reported issues and testing progress to IT and hospital management, and trained end users on new modules."
       ]
     },
     {
       role: "Software Engineer Intern",
-      company: "Dubai Islamic bank ",
+      company: "Dubai Islamic Bank",
       location: "Karachi, Pakistan",
       type: "Internship",
       date: "July 2015 - Aug 2015",
       expertise: [
-        "Implemented banking ERP by developing forms using PLSQL and demonstrated proficiency in working with Oracle Database 9i.",
+        "Developed PL/SQL forms for the banking ERP on Oracle Database."
       ]
     },
     {
@@ -82,9 +102,7 @@ const AboutMe = () => {
       type: "Internship",
       date: "July 2014 - Sep 2014",
       expertise: [
-        "Provided technical support and network troubleshooting within the operations department, ensuring smooth connectivity and minimal downtime for business-critical systems",
-        "Logistics ERP by creating new forms and reports in Oracle using PLSQL, alongside expertise in Oracle Database 9i",
-
+        "Built Oracle forms and reports for the logistics ERP using PL/SQL and supported network troubleshooting in operations."
       ]
     },
     {
@@ -94,8 +112,7 @@ const AboutMe = () => {
       type: "Internship",
       date: "Jan 2014 - Apr 2014",
       expertise: [
-        "Developed diverse websites, including interactive restaurant platforms, engaging blogs, and robust Gas and Electricity service interfaces, using JavaScript and Bootstrap frameworks to showcase proficiency in web application development.",
-
+        "Developed websites, including restaurant platforms, blogs and gas and electricity service interfaces, with JavaScript and Bootstrap."
       ]
     },
   ];
@@ -132,7 +149,7 @@ const AboutMe = () => {
         {/* About Me Description */}
         <motion.div variants={fadeUp} className="space-y-6 mb-10">
           <p className="text-sm sm:text-md md:text-lg lg:text-xl font-poppins font-Regular text-lightContent">
-            Business Analyst and Software Engineer with a robust background in software development, combining analytical precision with deep technical understanding to enhance business performance. Experienced in gathering and analyzing requirements, documenting workflows, and validating data and APIs across the software lifecycle. Skilled in requirements elicitation, process documentation, SQL data validation, and API testing within Agile environments. Known for bridging communication between stakeholders such as product owners, developers, and QA teams to ensure functional alignment and system reliability. Passionate about transforming complex technical insights into practical business outcomes that improve efficiency and user satisfaction.
+            QA-focused software engineer with an MSc in Computer Engineering. I review specifications, design and execute functional and regression test cases traced to requirements, and manage defects from report through investigation to verified fix. Hands-on with user acceptance testing on an Oracle-based hospital ERP, REST API testing with Postman and SQL data validation, plus web development with Node.js, React.js and MongoDB. I enjoy finding issues early, working closely with developers and stakeholders, and I am growing my skills in test automation and CI/CD.
           </p>
         </motion.div>
 
@@ -195,10 +212,10 @@ const AboutMe = () => {
               <div className="flex flex-col md:flex-row md:justify-between">
                 <div className="mb-2 md:mb-0">
                   <h3 className="font-poppins text-sm sm:text-md md:text-lg lg:text-xl font-Regular text-white">
-                    Master in Computer Engineering
+                    Master of Information Technologies in Computer Engineering (thesis-based, GPA 3.57)
                   </h3>
                   <p className="font-poppins text-sm font-Regular text-lightContent">
-                    Altinbas University @ Istanbul, Turkey
+                    Altınbaş University @ Istanbul, Turkey
                   </p>
                 </div>
                 <div className="flex flex-col md:items-end gap-1">
@@ -206,7 +223,7 @@ const AboutMe = () => {
                     Full Time
                   </span>
                   <span className="font-poppins text-sm font-Regular text-lightContent">
-                    Aug 2016 - Dec 2020
+                    July 2020 - Apr 2023
                   </span>
                 </div>
               </div>
@@ -228,7 +245,7 @@ const AboutMe = () => {
                     Full Time
                   </span>
                   <span className="font-poppins text-sm font-Regular text-lightContent">
-                    Aug 2016 - Dec 2020
+                    Sep 2013 - Sep 2018
                   </span>
                 </div>
               </div>
