@@ -12,8 +12,8 @@ const navLinks = [
 ];
 
 const linkClass = ({ isActive }) =>
-  `px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
-    isActive ? 'text-accent' : 'text-muted hover:text-text'
+  `px-3 py-2 text-sm font-semibold transition-colors border-b-2 ${
+    isActive ? 'text-accent border-accent' : 'text-muted border-transparent hover:text-text'
   }`;
 
 const Navbar = () => {
@@ -62,7 +62,7 @@ const Navbar = () => {
                 end={link.href === '/'}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `py-3 border-b border-line text-base font-semibold ${isActive ? 'text-accent' : 'text-text'}`
+                  `py-3 pl-3 border-b border-line border-l-2 text-base font-semibold ${isActive ? 'text-accent border-l-accent' : 'text-text border-l-transparent'}`
                 }
               >
                 {link.name}
