@@ -3,6 +3,32 @@ import React from 'react';
 
 const experienceData = [
   {
+    role: "Frontend & Full-Stack Developer",
+    company: "Freelance",
+    location: "Remote",
+    type: "Part Time",
+    date: "Jan 2023 - Present",
+    expertise: [
+      "EduSync Pro school management system: built the React and Redux Toolkit frontend with RTK Query, a reusable component library, Tailwind design tokens, responsive layouts and a multi-language UI, plus the Node.js, Express and MongoDB REST APIs behind it.",
+      "Gold, silver, crypto and stock tracker: MERN app with multi-user accounts, profit/loss dashboards and price alerts, deployed on Render.",
+      "Portfolio and business websites: responsive React and Tailwind sites from design to deployment; cut image weight from about 5 MB to 0.3 MB and halved the JavaScript bundle.",
+      "Debug and test each feature before delivery, including REST APIs with Postman, against agreed acceptance criteria."
+    ]
+  },
+  {
+    role: "Software Engineer (Frontend, MERN)",
+    company: "Digiteaz",
+    location: "Karachi, Pakistan",
+    type: "Full Time",
+    date: "Dec 2021 - July 2022",
+    expertise: [
+      "Built new features and fixed bugs across the React frontend of a MERN platform.",
+      "Refactored React class components to function components with hooks, using Redux Toolkit for state.",
+      "Redesigned client websites with responsive layouts and improved their speed and interactivity.",
+      "Built Node.js features such as Stripe payments and SMTP email; documented feature workflows in Confluence."
+    ]
+  },
+  {
     role: "IT Support Engineer and IT Teacher",
     company: "Gokkusagi International School",
     location: "Istanbul, Turkey",
@@ -12,30 +38,6 @@ const experienceData = [
       "Diagnose and resolve technical issues across PCs, smart boards, printers, servers and the school network.",
       "Support system upgrades and security measures to keep services reliable for all departments.",
       "Teach IT in English and lead hands-on Arduino and IoT projects."
-    ]
-  },
-  {
-    role: "Freelance Software Developer",
-    company: "Freelance",
-    location: "Remote",
-    type: "Part Time",
-    date: "Jan 2023 - Present",
-    expertise: [
-      "Build and test web applications for clients with Node.js, Express, MongoDB and React.js; test REST APIs with Postman before delivery.",
-      "Agree requirements and acceptance criteria with clients and verify features against them."
-    ]
-  },
-  {
-    role: "Software Engineer",
-    company: "Digiteaz",
-    location: "Karachi, Pakistan",
-    type: "Full Time",
-    date: "Dec 2021 - July 2022",
-    expertise: [
-      "Fixed bugs across platform features and refactored React components from class-based to function-based with hooks.",
-      "Built Node.js back-end features, including Stripe payment integration and SMTP email configuration.",
-      "Improved frontend speed and interactivity by refactoring and optimizing existing MERN codebases.",
-      "Documented feature workflows in Confluence to speed up onboarding for new developers."
     ]
   },
   {
@@ -117,7 +119,7 @@ const AboutMe = () => (
       <Reveal className="grid gap-6 5xl:grid-cols-[16rem_1fr]">
         <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">About me</h2>
         <p className="text-lg leading-relaxed text-muted max-w-[68ch]">
-          QA-focused software engineer with an MSc in Computer Engineering. I review specifications, design and execute functional and regression test cases traced to requirements, and manage defects from report through investigation to verified fix. Hands-on with user acceptance testing on an Oracle-based hospital ERP, REST API testing with Postman and SQL data validation, plus web development with Node.js, React.js and MongoDB. I enjoy finding issues early, working closely with developers and stakeholders, and I am growing my skills in test automation and CI/CD.
+          Frontend developer with an MSc in Computer Engineering. I turn UI/UX designs into responsive, accessible interfaces with React, JavaScript/TypeScript, HTML, CSS/Sass and Tailwind, and connect them to Node.js and Express REST APIs. I built the frontend and back end of EduSync Pro, a school management system running as a demo for schools in Turkey and Pakistan. Before moving into development I led user acceptance testing on a hospital ERP, so I test every feature against real acceptance criteria. I am now learning Angular, RxJS and unit testing with Jasmine and Karma.
         </p>
       </Reveal>
 

@@ -4,13 +4,13 @@ import { FaCheck } from 'react-icons/fa';
 import profile from '../images/profile.webp';
 
 const checks = [
-  'Requirements reviewed for gaps',
-  'Test cases traced to each requirement',
-  'Regression suite run',
-  'APIs checked in Postman',
-  'Data validated with SQL',
-  'Defects fixed and re-verified',
-];
+  'Matches the design on every screen',
+  'Responsive on phone, tablet and desktop',
+  'Keyboard and contrast checked',
+  'Loading and error states handled',
+  'Tested against the acceptance criteria',
+  'Images and bundle size optimised',
+]
 
 const Banner = ({ title }) => {
   if (title) {
@@ -47,12 +47,12 @@ const Banner = ({ title }) => {
             </div>
           </div>
 
-          <h1 style={{ animationDelay: '0.15s' }} className="fade-up mt-8 text-4xl 3xl:text-5xl 6xl:text-6xl font-extrabold tracking-tight leading-[1.05] text-text max-w-[16ch]">
-            QA engineer and software developer
+          <h1 style={{ animationDelay: '0.15s' }} className="fade-up mt-8 text-4xl 3xl:text-5xl 6xl:text-6xl font-extrabold tracking-tight leading-[1.05] text-text max-w-[20ch]">
+            Frontend developer who builds the whole app
           </h1>
           <p style={{ animationDelay: '0.3s' }} className="fade-up mt-6 text-lg text-muted max-w-[52ch] leading-relaxed">
-            I turn requirements into test cases, catch defects before they reach users, and build web
-            apps with Node.js and React.
+            I turn designs into fast, responsive React interfaces and connect them to Node.js APIs,
+            with a tester's eye for detail.
           </p>
 
           <div style={{ animationDelay: '0.45s' }} className="fade-up mt-8 flex flex-wrap gap-3">

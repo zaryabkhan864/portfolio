@@ -37,7 +37,7 @@ const Contact = () => {
         <Reveal>
           <h2 className="text-2xl 3xl:text-3xl font-extrabold tracking-tight text-text">Contact</h2>
           <p className="mt-4 text-lg text-muted max-w-[46ch] leading-relaxed">
-            Hiring for a QA or developer role, or need help with a project? Send me a message and I will
+            Hiring for a frontend or full-stack role, or need help with a project? Send me a message and I will
             get back to you soon.
           </p>
           <ul className="mt-8 space-y-4">

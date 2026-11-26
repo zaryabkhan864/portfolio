@@ -3,22 +3,26 @@ import React from 'react';
 
 const groups = [
   {
-    name: 'Testing',
-    items: ['Test case design', 'Functional testing', 'Regression testing', 'User acceptance testing', 'Requirements traceability', 'Defect tracking'],
+    name: 'Frontend',
+    items: ['React', 'Redux Toolkit (RTK Query)', 'JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3', 'Sass', 'Tailwind CSS', 'Bootstrap', 'Material-UI', 'Responsive and accessible UI'],
   },
   {
-    name: 'Back-end and data',
-    items: ['REST API testing (Postman)', 'SQL', 'Oracle', 'MySQL', 'MongoDB', 'PL/SQL'],
+    name: 'Back end and data',
+    items: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'MySQL', 'SQL'],
   },
   {
-    name: 'Development',
-    items: ['JavaScript', 'TypeScript', 'React.js', 'Redux', 'Node.js', 'Express.js', 'Python', 'Tailwind CSS'],
+    name: 'Testing and quality',
+    items: ['Acceptance testing', 'Test case design', 'Debugging', 'API testing (Postman)', 'Defect tracking'],
   },
   {
     name: 'Tools and ways of working',
-    items: ['Jira', 'Confluence', 'Git and GitHub', 'Bitbucket', 'Figma', 'Agile (Scrum, Kanban)'],
+    items: ['Git and GitHub', 'Bitbucket', 'Jira', 'Confluence', 'Figma', 'Vercel', 'Render', 'Agile (Scrum, Kanban)'],
   },
-];
+  {
+    name: 'Currently learning',
+    items: ['Angular', 'RxJS', 'Jasmine and Karma'],
+  },
+]
 
 const Tech = () => (
   <section id="tech-stack" className="px-4 3xl:px-6 py-16 3xl:py-24 bg-panel/40 border-y border-line">
